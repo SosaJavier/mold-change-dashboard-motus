@@ -1,0 +1,18 @@
+[Fri 02/20/2026 13:21:56.34] --------whoami-------- 
+motus\jramos
+[Fri 02/20/2026 13:21:56.62] --------whoami-------- 
+[Fri 02/20/2026 13:21:56.62] Waiting for Runner.Listener.exe (28720) to complete 
+[Fri 02/20/2026 13:21:57.28] Process 28720 finished running 
+[Fri 02/20/2026 13:21:57.29] Sleep 1 more second to make sure process exited 
+[Fri 02/20/2026 13:21:58.31] Re-organize folders 
+[Fri 02/20/2026 13:21:58.34] move "C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin" "C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin.2.321.0" 
+        1 dir(s) moved.
+[Fri 02/20/2026 13:21:58.39] move "C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\externals" "C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\externals.2.321.0" 
+        1 dir(s) moved.
+[Fri 02/20/2026 13:21:58.39] Create junction bin folder 
+Junction created for C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin <<===>> C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin.2.331.0
+[Fri 02/20/2026 13:21:58.39] Create junction externals folder 
+Junction created for C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\externals <<===>> C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\externals.2.331.0
+[Fri 02/20/2026 13:21:58.41] Update succeed 
+[Fri 02/20/2026 13:21:58.41] update.finished file creation succeed 
+[Fri 02/20/2026 13:21:58.41] Rename "C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag\SelfUpdate-20260220-192156.log" to be "C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag\SelfUpdate-20260220-192156.log.succeed" 

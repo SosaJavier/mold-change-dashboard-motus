@@ -1,0 +1,148 @@
+[2026-02-20 19:21:59Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO HostContext] Well known config file 'Runner': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner'
+[2026-02-20 19:21:59Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-02-20 19:21:59Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.26200.
+[2026-02-20 19:21:59Z INFO Listener] Version: 2.331.0
+[2026-02-20 19:21:59Z INFO Listener] Commit: 39f6c643d3032f8795fa71f1482731ca90c8e038
+[2026-02-20 19:21:59Z INFO Listener] Culture: en-US
+[2026-02-20 19:21:59Z INFO Listener] UI Culture: en-US
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO Listener] Validating directory permissions for: 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO CommandLineParser] Parse
+[2026-02-20 19:21:59Z INFO CommandLineParser] Parsing 1 args
+[2026-02-20 19:21:59Z INFO CommandLineParser] parsing argument
+[2026-02-20 19:21:59Z INFO CommandLineParser] HasArgs: False
+[2026-02-20 19:21:59Z INFO CommandLineParser] Adding Command: run
+[2026-02-20 19:21:59Z INFO Listener] Arguments parsed
+[2026-02-20 19:21:59Z INFO Runner] ExecuteCommand
+[2026-02-20 19:21:59Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin\Runner.Listener.dll
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO ConfigurationStore] binPath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO ConfigurationStore] RootFolder: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO HostContext] Well known config file 'Runner': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner'
+[2026-02-20 19:21:59Z INFO ConfigurationStore] ConfigFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner_migrated'
+[2026-02-20 19:21:59Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner_migrated
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials'
+[2026-02-20 19:21:59Z INFO ConfigurationStore] CredFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_migrated'
+[2026-02-20 19:21:59Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_migrated
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO HostContext] Well known config file 'Service': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.service'
+[2026-02-20 19:21:59Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.service
+[2026-02-20 19:21:59Z INFO CommandSettings] Flag 'help': 'False'
+[2026-02-20 19:21:59Z INFO CommandSettings] Flag 'version': 'False'
+[2026-02-20 19:21:59Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-02-20 19:21:59Z INFO CommandSettings] Flag 'check': 'False'
+[2026-02-20 19:21:59Z INFO CommandSettings] Command 'configure': 'False'
+[2026-02-20 19:21:59Z INFO CommandSettings] Command 'remove': 'False'
+[2026-02-20 19:21:59Z INFO CommandSettings] Command 'warmup': 'False'
+[2026-02-20 19:21:59Z INFO ConfigurationManager] LoadSettings
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsConfigured()
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsConfigured: True
+[2026-02-20 19:21:59Z INFO ConfigurationManager] Is configured: True
+[2026-02-20 19:21:59Z INFO ConfigurationStore] Read setting file: 331 chars
+[2026-02-20 19:21:59Z INFO ConfigurationManager] Settings Loaded
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsServiceConfigured()
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsServiceConfigured: False
+[2026-02-20 19:21:59Z INFO CommandSettings] Command 'run': 'True'
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsConfigured()
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsConfigured: True
+[2026-02-20 19:21:59Z INFO ConfigurationManager] Is configured: True
+[2026-02-20 19:21:59Z INFO Runner] Could not parse the argument value '' for StartupType. Defaulting to Manual
+[2026-02-20 19:21:59Z INFO Runner] Set runner startup type - Manual
+[2026-02-20 19:21:59Z INFO CommandSettings] Flag 'once': 'False'
+[2026-02-20 19:21:59Z INFO CommandSettings] Flag 'once': 'False'
+[2026-02-20 19:21:59Z INFO Runner] RunAsync
+[2026-02-20 19:21:59Z INFO ConfigurationManager] LoadMigratedSettings
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsMigratedConfigured()
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsMigratedConfigured: False
+[2026-02-20 19:21:59Z INFO Runner] Failed to load migrated settings: No migrated configuration found.
+[2026-02-20 19:21:59Z INFO Runner] Falling back to original .runner settings
+[2026-02-20 19:21:59Z INFO ConfigurationManager] LoadSettings
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsConfigured()
+[2026-02-20 19:21:59Z INFO ConfigurationStore] IsConfigured: True
+[2026-02-20 19:21:59Z INFO ConfigurationManager] Is configured: True
+[2026-02-20 19:21:59Z INFO ConfigurationManager] Settings Loaded
+[2026-02-20 19:21:59Z INFO MessageListener] {
+  "AgentId": 2,
+  "AgentName": "WindowsRunner-Motus",
+  "PoolId": 1,
+  "PoolName": "Default",
+  "ServerUrl": "https://pipelinesghubeus7.actions.githubusercontent.com/NEKryiqQ3E0Lej0i4Pk3xrVrvZYaPytuDCx35Nw7k1hlB40cAz/",
+  "GitHubUrl": "https://github.com/SosaJavier/mold-change-dashboard-motus",
+  "WorkFolder": "_work"
+}
+[2026-02-20 19:21:59Z INFO MessageListener] Loading Credentials
+[2026-02-20 19:21:59Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 19:21:59Z INFO ConfigurationStore] stored True
+[2026-02-20 19:21:59Z INFO CredentialManager] GetCredentialProvider
+[2026-02-20 19:21:59Z INFO CredentialManager] Creating type OAuth
+[2026-02-20 19:21:59Z INFO CredentialManager] Creating credential type: OAuth
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:21:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:21:59Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams'
+[2026-02-20 19:21:59Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams
+[2026-02-20 19:21:59Z INFO MessageListener] Attempt to create session.
+[2026-02-20 19:21:59Z INFO MessageListener] Connecting to the Runner Server...
+[2026-02-20 19:21:59Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 19:21:59Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-02-20 19:21:59Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 19:21:59Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 19:21:59Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 19:21:59Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 19:21:59Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 19:21:59Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 19:21:59Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 19:21:59Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 19:21:59Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 19:21:59Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 19:21:59Z INFO MessageListener] VssConnection created
+[2026-02-20 19:21:59Z INFO Terminal] WRITE LINE: 
+[2026-02-20 19:21:59Z INFO Terminal] WRITE LINE: 
+[2026-02-20 19:21:59Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams
+[2026-02-20 19:21:59Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams
+[2026-02-20 19:22:00Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-02-20 19:22:00Z INFO MessageListener] Session created.
+[2026-02-20 19:22:00Z INFO MessageListener] Registering AuthMigrationChanged event handler.
+[2026-02-20 19:22:00Z INFO Terminal] WRITE LINE: Current runner version: '2.331.0'
+[2026-02-20 19:22:00Z INFO Terminal] WRITE LINE: 2026-02-20 19:22:00Z: Listening for Jobs
+[2026-02-20 19:22:00Z INFO JobDispatcher] Set runner/worker IPC timeout to 30 seconds.
+[2026-02-20 19:22:00Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 19:22:00Z INFO ConfigurationStore] stored True
+[2026-02-20 19:22:00Z INFO CredentialManager] GetCredentialProvider
+[2026-02-20 19:22:00Z INFO CredentialManager] Creating type OAuth
+[2026-02-20 19:22:00Z INFO CredentialManager] Creating credential type: OAuth
+[2026-02-20 19:22:00Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams
+[2026-02-20 19:22:00Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams
+[2026-02-20 19:22:00Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams
+[2026-02-20 19:22:00Z INFO GitHubActionsService] AAD Correlation ID for this token request: Unknown
+[2026-02-20 19:22:51Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 19:22:51Z INFO ConfigurationStore] stored True
+[2026-02-20 19:22:51Z INFO CredentialManager] GetCredentialProvider
+[2026-02-20 19:22:51Z INFO CredentialManager] Creating type OAuth
+[2026-02-20 19:22:51Z INFO CredentialManager] Creating credential type: OAuth
+[2026-02-20 19:22:51Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams
+[2026-02-20 19:23:41Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 19:23:41Z INFO ConfigurationStore] stored True
+[2026-02-20 19:23:41Z INFO CredentialManager] GetCredentialProvider
+[2026-02-20 19:23:41Z INFO CredentialManager] Creating type OAuth
+[2026-02-20 19:23:41Z INFO CredentialManager] Creating credential type: OAuth
+[2026-02-20 19:23:41Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams
