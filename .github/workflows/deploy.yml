@@ -11,6 +11,7 @@ jobs:
 
     steps:
       - name: Deploy application
+        shell: powershell
         run: |
           cd "C:\Apps Saltillo\mold-change-dashboard-motus"
           git pull
