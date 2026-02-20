@@ -1,0 +1,1485 @@
+[2026-02-20 19:42:43Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known config file 'Runner': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner'
+[2026-02-20 19:42:43Z INFO Worker] Version: 2.331.0
+[2026-02-20 19:42:43Z INFO Worker] Commit: 39f6c643d3032f8795fa71f1482731ca90c8e038
+[2026-02-20 19:42:43Z INFO Worker] Culture: en-US
+[2026-02-20 19:42:43Z INFO Worker] UI Culture: en-US
+[2026-02-20 19:42:43Z INFO Worker] Waiting to receive the job message from the channel.
+[2026-02-20 19:42:43Z INFO ProcessChannel] Receiving message of length 19738, with hash 'c9a052b8b5a535b7cab7a72e3e9af9b939fdd5c6e28fcc3a9f228cf9685f757a'
+[2026-02-20 19:42:43Z INFO Worker] Message received.
+[2026-02-20 19:42:43Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/main.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 13,
+        "col": 15,
+        "lit": "Deploy application"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 14,
+              "col": 14,
+              "lit": "cd \"C:\\Apps Saltillo\\mold-change-dashboard-motus\"\ngit pull\npnpm install\npnpm build\npm2 restart Apps_Motus\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "e13d7e92-178a-4861-9cfd-a0ace482295c",
+      "name": "__run"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_runner_compare_workflow_parser": {
+      "value": "false"
+    },
+    "actions_set_orchestration_id_env_for_actions": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "f634c96b-93fa-4fcb-af43-154d7e46c105.deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "deploy"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "f634c96b-93fa-4fcb-af43-154d7e46c105",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "f634c96b-93fa-4fcb-af43-154d7e46c105",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "50eb3582-ae1e-5a23-9161-e04fecabcdfb",
+  "jobDisplayName": "deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/NEKryiqQ3E0Lej0i4Pk3xrVrvZYaPytuDCx35Nw7k1hlB40cAz/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus7.actions.githubusercontent.com/NEKryiqQ3E0Lej0i4Pk3xrVrvZYaPytuDCx35Nw7k1hlB40cAz/",
+          "GenerateIdTokenUrl": "",
+          "ConnectivityChecks": "[\"https://broker.actions.githubusercontent.com/health\",\"https://token.actions.githubusercontent.com/ready\",\"https://run.actions.githubusercontent.com/health\"]"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-1-azure-eastus.actions.githubusercontent.com/62/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "edaf6cfdba964d7b1221a20fb5edba0fae230a60"
+        },
+        {
+          "k": "repository",
+          "v": "SosaJavier/mold-change-dashboard-motus"
+        },
+        {
+          "k": "repository_owner",
+          "v": "SosaJavier"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "183226087"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/SosaJavier/mold-change-dashboard-motus.git"
+        },
+        {
+          "k": "run_id",
+          "v": "22238532867"
+        },
+        {
+          "k": "run_number",
+          "v": "1"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "183226087"
+        },
+        {
+          "k": "actor",
+          "v": "SosaJavier"
+        },
+        {
+          "k": "workflow",
+          "v": "Deploy to Server"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "edaf6cfdba964d7b1221a20fb5edba0fae230a60"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "7e098c526769bff7cf1892c8f713cc4d08b4ad00"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "3bsjavier@gmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Javier Ramos"
+                              },
+                              {
+                                "k": "username",
+                                "v": "SosaJavier"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "noreply@github.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "GitHub"
+                              },
+                              {
+                                "k": "username",
+                                "v": "web-flow"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "edaf6cfdba964d7b1221a20fb5edba0fae230a60"
+                        },
+                        {
+                          "k": "message",
+                          "v": "Create main.yml\n\nAdd automatic deploy workflow"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2026-02-20T13:42:33-06:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "d5a39b811d57a347e6ef05c500f2b6deb5d57d47"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/SosaJavier/mold-change-dashboard-motus/commit/edaf6cfdba964d7b1221a20fb5edba0fae230a60"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/SosaJavier/mold-change-dashboard-motus/compare/7e098c526769...edaf6cfdba96"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "3bsjavier@gmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Javier Ramos"
+                          },
+                          {
+                            "k": "username",
+                            "v": "SosaJavier"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "noreply@github.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "GitHub"
+                          },
+                          {
+                            "k": "username",
+                            "v": "web-flow"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "edaf6cfdba964d7b1221a20fb5edba0fae230a60"
+                    },
+                    {
+                      "k": "message",
+                      "v": "Create main.yml\n\nAdd automatic deploy workflow"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2026-02-20T13:42:33-06:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "d5a39b811d57a347e6ef05c500f2b6deb5d57d47"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/SosaJavier/mold-change-dashboard-motus/commit/edaf6cfdba964d7b1221a20fb5edba0fae230a60"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "3bsjavier@gmail.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "SosaJavier"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/SosaJavier/mold-change-dashboard-motus.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1771604183.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": "Apps Motus"
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "SosaJavier/mold-change-dashboard-motus"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/SosaJavier/mold-change-dashboard-motus.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pull_requests",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/SosaJavier/mold-change-dashboard-motus"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1162731052.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "TypeScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "mold-change-dashboard-motus"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDORU3eLA"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/183226087?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "3bsjavier@gmail.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/SosaJavier/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/SosaJavier/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/SosaJavier/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/SosaJavier/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/SosaJavier"
+                          },
+                          {
+                            "k": "id",
+                            "v": 183226087.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "SosaJavier"
+                          },
+                          {
+                            "k": "name",
+                            "v": "SosaJavier"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOCuvO5w"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/SosaJavier/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/SosaJavier/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/SosaJavier/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/SosaJavier/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/SosaJavier/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/SosaJavier"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pull_request_creation_policy",
+                      "v": "all"
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1771616554.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 190.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:SosaJavier/mold-change-dashboard-motus.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/SosaJavier/mold-change-dashboard-motus"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-02-20T16:18:12Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/SosaJavier/mold-change-dashboard-motus"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/183226087?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/SosaJavier/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/SosaJavier/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/SosaJavier/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/SosaJavier/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/SosaJavier"
+                    },
+                    {
+                      "k": "id",
+                      "v": 183226087.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "SosaJavier"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOCuvO5w"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/SosaJavier/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/SosaJavier/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/SosaJavier/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/SosaJavier/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/SosaJavier/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/SosaJavier"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "SosaJavier/mold-change-dashboard-motus/.github/workflows/main.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "edaf6cfdba964d7b1221a20fb5edba0fae230a60"
+        },
+        {
+          "k": "repository_id",
+          "v": "1162731052"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "SosaJavier"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 64336131242.0
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOCuvO5w"
+}
+[2026-02-20 19:42:43Z INFO JobRunner] Job ID 50eb3582-ae1e-5a23-9161-e04fecabcdfb
+[2026-02-20 19:42:43Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin\Runner.Worker.dll
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO ConfigurationStore] binPath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO ConfigurationStore] RootFolder: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known config file 'Runner': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner'
+[2026-02-20 19:42:43Z INFO ConfigurationStore] ConfigFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner_migrated'
+[2026-02-20 19:42:43Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.runner_migrated
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials'
+[2026-02-20 19:42:43Z INFO ConfigurationStore] CredFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_migrated'
+[2026-02-20 19:42:43Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_migrated
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known config file 'Service': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.service'
+[2026-02-20 19:42:43Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.service
+[2026-02-20 19:42:43Z INFO ConfigurationStore] Read setting file: 331 chars
+[2026-02-20 19:42:43Z INFO JobRunner] Initializing launch client
+[2026-02-20 19:42:43Z INFO JobServerQueue] Initializing results client
+[2026-02-20 19:42:43Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2026-02-20 19:42:43Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2026-02-20 19:42:43Z INFO JobServerQueue] Start process web console line queue.
+[2026-02-20 19:42:43Z INFO JobServerQueue] Start process file upload queue.
+[2026-02-20 19:42:43Z INFO JobServerQueue] Start results file upload queue.
+[2026-02-20 19:42:43Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-02-20 19:42:43Z INFO JobServerQueue] Start process timeline update queue.
+[2026-02-20 19:42:43Z INFO ExecutionContext] Initializing Job context
+[2026-02-20 19:42:43Z INFO ExecutionContext] Initialize GitHub context
+[2026-02-20 19:42:43Z INFO ExecutionContext] Initialize Env context
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Diag': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Diag': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag'
+[2026-02-20 19:42:43Z INFO JobRunner] Starting the job execution context.
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO JobRunner] Validating directory permissions for: 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Tools': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_tool'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Temp': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_temp'
+[2026-02-20 19:42:43Z INFO JobRunner] Getting job extension.
+[2026-02-20 19:42:43Z INFO JobRunner] Initialize job. Getting all job steps.
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Diag': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Diag': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.setup_info'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_PipelineMapping\SosaJavier/mold-change-dashboard-motus\PipelineFolder.json
+[2026-02-20 19:42:43Z INFO PipelineDirectoryManager] Creating a new tracking config file.
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO PipelineDirectoryManager] Creating pipeline directory.
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO PipelineDirectoryManager] Creating workspace directory.
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO JobExtension] Downloading actions
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Actions': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_actions'
+[2026-02-20 19:42:43Z INFO JobExtension] Adding .
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Diag': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Diag': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag'
+[2026-02-20 19:42:43Z INFO JobExtension] Total accessible running process: 423.
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO JobExtension] Start checking server connectivity.
+[2026-02-20 19:42:43Z INFO JobExtension] Check server connectivity for https://broker.actions.githubusercontent.com/health.
+[2026-02-20 19:42:43Z INFO JobExtension] Check server connectivity for https://token.actions.githubusercontent.com/ready.
+[2026-02-20 19:42:43Z INFO JobExtension] Check server connectivity for https://run.actions.githubusercontent.com/health.
+[2026-02-20 19:42:43Z INFO JobExtension] Start checking service connectivity in background.
+[2026-02-20 19:42:43Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "ee4dfc0f-48f1-4e2d-bfe1-5bd0eb981bc3",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-02-20T19:42:43.7382401Z",
+  "finishTime": "2026-02-20T19:42:43.8148058Z"
+}.
+[2026-02-20 19:42:43Z INFO JobRunner] Total job steps: 1.
+[2026-02-20 19:42:43Z INFO JobRunner] Run all job steps.
+[2026-02-20 19:42:43Z INFO StepsRunner] Processing step: DisplayName='Deploy application'
+[2026-02-20 19:42:43Z INFO StepsRunner] Evaluating: success()
+[2026-02-20 19:42:43Z INFO StepsRunner] Result: true
+[2026-02-20 19:42:43Z INFO StepsRunner] Starting the step.
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO StepsRunner] Which2: 'chcp'
+[2026-02-20 19:42:43Z INFO StepsRunner] Location: 'C:\windows\system32\chcp.COM'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper] Starting process:
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   File name: 'C:\windows\system32\chcp.COM'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper] Process started with process id 21008, waiting for process exit.
+[2026-02-20 19:42:43Z INFO Worker] Listening for cancel message from the channel.
+[2026-02-20 19:42:43Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper] Finished process 21008 with exit code 0, and elapsed time 00:00:00.0285437.
+[2026-02-20 19:42:43Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Temp': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_temp'
+[2026-02-20 19:42:43Z INFO ExecutionContext] Write event payload to C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_temp\_github_workflow\event.json
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Temp': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_temp'
+[2026-02-20 19:42:43Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command error
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command group
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-02-20 19:42:43Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-02-20 19:42:43Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-02-20 19:42:43Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-02-20 19:42:43Z INFO ScriptHandler] Defaulting to powershell
+[2026-02-20 19:42:43Z INFO ScriptHandler] Which2: 'powershell'
+[2026-02-20 19:42:43Z INFO ScriptHandler] Location: 'C:\windows\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work'
+[2026-02-20 19:42:43Z INFO HostContext] Well known directory 'Temp': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_temp'
+[2026-02-20 19:42:43Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-02-20 19:42:43Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-02-20 19:42:43Z INFO ScriptHandler] Defaulting to powershell
+[2026-02-20 19:42:43Z INFO ScriptHandler] Which2: 'powershell'
+[2026-02-20 19:42:43Z INFO ScriptHandler] Location: 'C:\windows\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper] Starting process:
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   File name: 'C:\windows\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_temp\a6d2f778-e192-4a0b-a06b-6aaab30e9e90.ps1'"'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\mold-change-dashboard-motus\mold-change-dashboard-motus'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-02-20 19:42:43Z INFO ProcessInvokerWrapper] Process started with process id 34036, waiting for process exit.
+[2026-02-20 19:42:44Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-20 19:42:44Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-02-20 19:42:44Z INFO ProcessInvokerWrapper] Finished process 34036 with exit code 1, and elapsed time 00:00:00.4405831.
+[2026-02-20 19:42:44Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_temp\_runner_file_commands\step_summary_5b1d7974-0624-475a-8f85-332ac0b604ad) is empty; skipping attachment upload
+[2026-02-20 19:42:44Z INFO StepsRunner] Step result: Failed
+[2026-02-20 19:42:44Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "e13d7e92-178a-4861-9cfd-a0ace482295c",
+  "stepContextName": "__run",
+  "result": "failed",
+  "errorMessages": [
+    "Process completed with exit code 1."
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-02-20T19:42:43.8225879Z",
+  "finishTime": "2026-02-20T19:42:44.3520867Z"
+}.
+[2026-02-20 19:42:44Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2026-02-20 19:42:44Z INFO StepsRunner] Current state: job state = 'Failed'
+[2026-02-20 19:42:44Z INFO JobRunner] Finalize job.
+[2026-02-20 19:42:44Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:44Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:44Z INFO HostContext] Well known directory 'Diag': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag'
+[2026-02-20 19:42:44Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:44Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:44Z INFO HostContext] Well known directory 'Diag': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag'
+[2026-02-20 19:42:44Z INFO JobExtension] Initialize Env context
+[2026-02-20 19:42:44Z INFO JobExtension] Initialize steps context
+[2026-02-20 19:42:44Z INFO JobExtension] Total accessible running process: 423.
+[2026-02-20 19:42:44Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2026-02-20 19:42:44Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2026-02-20 19:42:44Z INFO ResultServer] Successfully started websocket client.
+[2026-02-20 19:42:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ee4dfc0f-48f1-4e2d-bfe1-5bd0eb981bc3', success rate: 1/1.
+[2026-02-20 19:42:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e13d7e92-178a-4861-9cfd-a0ace482295c', success rate: 1/1.
+[2026-02-20 19:42:44Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-02-20 19:42:44Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2026-02-20 19:42:44Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag\blocks\f634c96b-93fa-4fcb-af43-154d7e46c105_ee4dfc0f-48f1-4e2d-bfe1-5bd0eb981bc3.1
+[2026-02-20 19:42:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e13d7e92-178a-4861-9cfd-a0ace482295c', success rate: 1/1.
+[2026-02-20 19:42:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '31dc2942-1ba0-42eb-a4bb-79201fb5348b', success rate: 1/1.
+[2026-02-20 19:42:44Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-02-20 19:42:44Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-02-20 19:42:44Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-02-20 19:42:44Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "31dc2942-1ba0-42eb-a4bb-79201fb5348b",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-02-20T19:42:44.3571921Z",
+  "finishTime": "2026-02-20T19:42:44.742983Z"
+}.
+[2026-02-20 19:42:44Z INFO JobRunner] Job result after all job steps finish: Failed
+[2026-02-20 19:42:44Z INFO JobRunner] Completing the job execution context.
+[2026-02-20 19:42:44Z INFO JobRunner] Shutting down the job server queue.
+[2026-02-20 19:42:44Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2026-02-20 19:42:45Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-02-20 19:42:45Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag\blocks\f634c96b-93fa-4fcb-af43-154d7e46c105_e13d7e92-178a-4861-9cfd-a0ace482295c.1
+[2026-02-20 19:42:45Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2026-02-20 19:42:46Z INFO JobServerQueue] All queue process task stopped.
+[2026-02-20 19:42:46Z INFO JobServerQueue] Web console line queue drained.
+[2026-02-20 19:42:46Z INFO JobServerQueue] Uploading 2 files in one shot.
+[2026-02-20 19:42:46Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2026-02-20 19:42:46Z INFO JobServerQueue] File upload queue drained.
+[2026-02-20 19:42:46Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-02-20 19:42:46Z INFO JobServerQueue] Uploading 2 file(s) in one shot through results service.
+[2026-02-20 19:42:46Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-02-20 19:42:46Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag\blocks\f634c96b-93fa-4fcb-af43-154d7e46c105_31dc2942-1ba0-42eb-a4bb-79201fb5348b.1
+[2026-02-20 19:42:46Z INFO JobServerQueue] Got a job log file to send to results service.
+[2026-02-20 19:42:46Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag\blocks\f634c96b-93fa-4fcb-af43-154d7e46c105_50eb3582-ae1e-5a23-9161-e04fecabcdfb.1
+[2026-02-20 19:42:47Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2026-02-20 19:42:47Z INFO JobServerQueue] Results upload queue drained.
+[2026-02-20 19:42:47Z INFO JobServerQueue] Timeline update queue drained.
+[2026-02-20 19:42:47Z INFO JobServerQueue] Disposing job server ...
+[2026-02-20 19:42:47Z INFO JobServerQueue] Disposing results server ...
+[2026-02-20 19:42:47Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2026-02-20 19:42:47Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_work\_temp
+[2026-02-20 19:42:47Z INFO HostContext] Well known directory 'Bin': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\bin'
+[2026-02-20 19:42:47Z INFO HostContext] Well known directory 'Root': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner'
+[2026-02-20 19:42:47Z INFO HostContext] Well known directory 'Diag': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag'
+[2026-02-20 19:42:47Z INFO HostContext] Well known config file 'Telemetry': 'C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\_diag\.telemetry'
+[2026-02-20 19:42:47Z INFO JobRunner] Raising job completed against run service
+[2026-02-20 19:42:47Z INFO Worker] Job completed.

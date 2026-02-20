@@ -522,3 +522,251 @@
 [2026-02-20 20:09:34Z INFO CredentialManager] Creating type OAuth
 [2026-02-20 20:09:34Z INFO CredentialManager] Creating credential type: OAuth
 [2026-02-20 20:09:34Z INFO RSAEncryptedFileKeyManager] Loading RSA key parameters from file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams
+[2026-02-20 20:10:24Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:10:24Z INFO ConfigurationStore] stored False
+[2026-02-20 20:10:24Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:10:24Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:10:24Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:10:24Z ERR  Terminal] WRITE ERROR: 2026-02-20 20:10:24Z: Runner connect error: Credentials not stored. Must reconfigure.. Retrying until reconnected.
+[2026-02-20 20:10:24Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:10:24Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:10:24Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:10:24Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:10:24Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:10:24Z INFO MessageListener] Sleeping for 25.893 seconds before retrying.
+[2026-02-20 20:10:50Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:10:50Z INFO ConfigurationStore] stored False
+[2026-02-20 20:10:50Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:10:50Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:10:50Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:10:50Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:10:50Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:10:50Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:10:50Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:10:51Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:10:51Z INFO MessageListener] Sleeping for 28.273 seconds before retrying.
+[2026-02-20 20:11:19Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:11:19Z INFO ConfigurationStore] stored False
+[2026-02-20 20:11:19Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:11:19Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:11:19Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:11:19Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:11:19Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:11:19Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:11:19Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:11:20Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:11:20Z INFO MessageListener] Sleeping for 18.857 seconds before retrying.
+[2026-02-20 20:11:39Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:11:39Z INFO ConfigurationStore] stored False
+[2026-02-20 20:11:39Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:11:39Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:11:39Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:11:39Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:11:39Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:11:39Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:11:39Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:11:39Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:11:39Z INFO MessageListener] Sleeping for 16.505 seconds before retrying.
+[2026-02-20 20:11:55Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:11:55Z INFO ConfigurationStore] stored False
+[2026-02-20 20:11:55Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:11:55Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:11:55Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:11:55Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:11:55Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:11:55Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:11:55Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:11:56Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:11:56Z INFO MessageListener] Sleeping for 20.34 seconds before retrying.
+[2026-02-20 20:12:16Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:12:16Z INFO ConfigurationStore] stored False
+[2026-02-20 20:12:16Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:12:16Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:12:16Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:12:16Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:12:16Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:12:16Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:12:16Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:12:17Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:12:17Z INFO MessageListener] Sleeping for 55.714 seconds before retrying.
+[2026-02-20 20:13:12Z INFO MessageListener] No message retrieved from session 'c8d56065-9e80-45e4-8662-323ea79bf0b9' within last 30 minutes.
+[2026-02-20 20:13:13Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:13:13Z INFO ConfigurationStore] stored False
+[2026-02-20 20:13:13Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:13:13Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:13:13Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:13:13Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:13:13Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:13:13Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:13:13Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:13:13Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:13:13Z INFO MessageListener] Sleeping for 33.905 seconds before retrying.
+[2026-02-20 20:13:47Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:13:47Z INFO ConfigurationStore] stored False
+[2026-02-20 20:13:47Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:13:47Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:13:47Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:13:47Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:13:47Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:13:47Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:13:47Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:13:47Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:13:47Z INFO MessageListener] Sleeping for 46.695 seconds before retrying.
+[2026-02-20 20:14:34Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:14:34Z INFO ConfigurationStore] stored False
+[2026-02-20 20:14:34Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:14:34Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:14:34Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:14:34Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:14:34Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:14:34Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:14:34Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:14:34Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:14:34Z INFO MessageListener] Sleeping for 41.288 seconds before retrying.
+[2026-02-20 20:15:16Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:15:16Z INFO ConfigurationStore] stored False
+[2026-02-20 20:15:16Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:15:16Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:15:16Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:15:16Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:15:16Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:15:16Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:15:16Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:15:16Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:15:16Z INFO MessageListener] Sleeping for 48.678 seconds before retrying.
+[2026-02-20 20:16:05Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:16:05Z INFO ConfigurationStore] stored False
+[2026-02-20 20:16:05Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:16:05Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:16:05Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:16:05Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:16:05Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:16:05Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:16:05Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:16:05Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:16:05Z INFO MessageListener] Sleeping for 40.37 seconds before retrying.
+[2026-02-20 20:16:46Z INFO ConfigurationStore] HasCredentials()
+[2026-02-20 20:16:46Z INFO ConfigurationStore] stored False
+[2026-02-20 20:16:46Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:16:46Z ERR  MessageListener] System.InvalidOperationException: Credentials not stored. Must reconfigure.
+   at GitHub.Runner.Listener.Configuration.CredentialManager.LoadCredentials(Boolean allowAuthUrlV2)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:16:46Z INFO MessageListener] Retriable exception: Credentials not stored. Must reconfigure.
+[2026-02-20 20:16:46Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:16:46Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:16:46Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:16:46Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:16:46Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:16:46Z INFO MessageListener] Sleeping for 31.085 seconds before retrying.
+[2026-02-20 20:17:17Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:17:17Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:17:17Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:17:17Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:17:17Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:17:17Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:17:17Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:17:18Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:17:18Z INFO MessageListener] Sleeping for 39.514 seconds before retrying.
+[2026-02-20 20:17:57Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:17:57Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:17:57Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:17:57Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:17:57Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:17:57Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:17:57Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:17:58Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:17:58Z INFO MessageListener] Sleeping for 55.203 seconds before retrying.
+[2026-02-20 20:18:53Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:18:53Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:18:53Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:18:53Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:18:53Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:18:53Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:18:53Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:18:53Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:18:53Z INFO MessageListener] Sleeping for 35.125 seconds before retrying.

@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "SosaJavier/mold-change-dashboard-motus",
+  "pipelineDirectory": "mold-change-dashboard-motus",
+  "workspaceDirectory": "mold-change-dashboard-motus\\mold-change-dashboard-motus",
+  "repositories": {
+    "SosaJavier/mold-change-dashboard-motus": {
+      "repositoryPath": "mold-change-dashboard-motus\\mold-change-dashboard-motus",
+      "lastRunOn": "02/20/2026 13:42:43 -06:00"
+    }
+  },
+  "lastRunOn": "02/20/2026 13:42:43 -06:00"
+}
