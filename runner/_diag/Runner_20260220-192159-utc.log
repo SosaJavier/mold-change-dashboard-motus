@@ -770,3 +770,904 @@
 [2026-02-20 20:18:53Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
 [2026-02-20 20:18:53Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
 [2026-02-20 20:18:53Z INFO MessageListener] Sleeping for 35.125 seconds before retrying.
+[2026-02-20 20:19:29Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:19:29Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:19:29Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:19:29Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:19:29Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:19:29Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:19:29Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:19:29Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:19:29Z INFO MessageListener] Sleeping for 57.462 seconds before retrying.
+[2026-02-20 20:20:26Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:20:26Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:20:26Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:20:26Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:20:26Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:20:26Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:20:26Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:20:27Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:20:27Z INFO MessageListener] Sleeping for 39.889 seconds before retrying.
+[2026-02-20 20:21:07Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:21:07Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:21:07Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:21:07Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:21:07Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:21:07Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:21:07Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:21:07Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:21:07Z INFO MessageListener] Sleeping for 52.488 seconds before retrying.
+[2026-02-20 20:22:00Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:22:00Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:22:00Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:22:00Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:22:00Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:22:00Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:22:00Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:22:00Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:22:00Z INFO MessageListener] Sleeping for 53.584 seconds before retrying.
+[2026-02-20 20:22:54Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:22:54Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:22:54Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:22:54Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:22:54Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:22:54Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:22:54Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:22:54Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:22:54Z INFO MessageListener] Sleeping for 40.928 seconds before retrying.
+[2026-02-20 20:23:35Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:23:35Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:23:35Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:23:35Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:23:35Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:23:35Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:23:35Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:23:35Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:23:35Z INFO MessageListener] Sleeping for 46.485 seconds before retrying.
+[2026-02-20 20:24:22Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:24:22Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:24:22Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:24:22Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:24:22Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:24:22Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:24:22Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:24:22Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:24:22Z INFO MessageListener] Sleeping for 50.009 seconds before retrying.
+[2026-02-20 20:25:12Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:25:12Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:25:12Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:25:12Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:25:12Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:25:12Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:25:12Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:25:13Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:25:13Z INFO MessageListener] Sleeping for 50.813 seconds before retrying.
+[2026-02-20 20:26:04Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:26:04Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:26:04Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:26:04Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:26:04Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:26:04Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:26:04Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:26:04Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:26:04Z INFO MessageListener] Sleeping for 51.711 seconds before retrying.
+[2026-02-20 20:26:56Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:26:56Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:26:56Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:26:56Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:26:56Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:26:56Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:26:56Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:26:56Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:26:56Z INFO MessageListener] Sleeping for 55.849 seconds before retrying.
+[2026-02-20 20:27:52Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:27:52Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:27:52Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:27:52Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:27:52Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:27:52Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:27:52Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:27:53Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:27:53Z INFO MessageListener] Sleeping for 49.728 seconds before retrying.
+[2026-02-20 20:28:42Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:28:42Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:28:42Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:28:42Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:28:42Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:28:42Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:28:42Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:28:43Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:28:43Z INFO MessageListener] Sleeping for 56.768 seconds before retrying.
+[2026-02-20 20:29:40Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:29:40Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:29:40Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:29:40Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:29:40Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:29:40Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:29:40Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:29:40Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:29:40Z INFO MessageListener] Sleeping for 52.994 seconds before retrying.
+[2026-02-20 20:30:33Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 20:30:33Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 20:30:33Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 20:30:33Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 20:30:33Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 20:30:33Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 20:30:33Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 20:30:33Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 20:30:33Z INFO MessageListener] Sleeping for 34 seconds before retrying.
+[2026-02-20 21:22:00Z INFO MessageListener] No message retrieved from session 'c8d56065-9e80-45e4-8662-323ea79bf0b9' within last 30 minutes.
+[2026-02-20 21:22:01Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:22:01Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:22:01Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:22:01Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:22:01Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:22:01Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:22:01Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:22:02Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:22:02Z INFO MessageListener] Sleeping for 35.607 seconds before retrying.
+[2026-02-20 21:22:37Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:22:37Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:22:37Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:22:37Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:22:37Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:22:37Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:22:37Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:22:38Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:22:38Z INFO MessageListener] Sleeping for 51.732 seconds before retrying.
+[2026-02-20 21:23:30Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:23:30Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:23:30Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:23:30Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:23:30Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:23:30Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:23:30Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:23:30Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:23:30Z INFO MessageListener] Sleeping for 54.977 seconds before retrying.
+[2026-02-20 21:24:25Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:24:25Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:24:25Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:24:25Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:24:25Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:24:25Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:24:25Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:24:25Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:24:25Z INFO MessageListener] Sleeping for 33.082 seconds before retrying.
+[2026-02-20 21:24:59Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:24:59Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:24:59Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:24:59Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:24:59Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:24:59Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:24:59Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:24:59Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:24:59Z INFO MessageListener] Sleeping for 48.014 seconds before retrying.
+[2026-02-20 21:25:47Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:25:47Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:25:47Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:25:47Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:25:47Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:25:47Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:25:47Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:25:47Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:25:47Z INFO MessageListener] Sleeping for 43.658 seconds before retrying.
+[2026-02-20 21:26:31Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:26:31Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:26:31Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:26:31Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:26:31Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:26:31Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:26:31Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:26:31Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:26:31Z INFO MessageListener] Sleeping for 53.118 seconds before retrying.
+[2026-02-20 21:27:25Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:27:25Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:27:25Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:27:25Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:27:25Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:27:25Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:27:25Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:27:25Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:27:25Z INFO MessageListener] Sleeping for 57.422 seconds before retrying.
+[2026-02-20 21:28:22Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:28:22Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:28:22Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:28:22Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:28:22Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:28:22Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:28:22Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:28:23Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:28:23Z INFO MessageListener] Sleeping for 42.979 seconds before retrying.
+[2026-02-20 21:29:06Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:29:06Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:29:06Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:29:06Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:29:06Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:29:06Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:29:06Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:29:06Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:29:06Z INFO MessageListener] Sleeping for 31.314 seconds before retrying.
+[2026-02-20 21:29:38Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:29:38Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:29:38Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:29:38Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:29:38Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:29:38Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:29:38Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:29:38Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:29:38Z INFO MessageListener] Sleeping for 58.575 seconds before retrying.
+[2026-02-20 21:30:37Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:30:37Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:30:37Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:30:37Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:30:37Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:30:37Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:30:37Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:30:37Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:30:37Z INFO MessageListener] Sleeping for 53.67 seconds before retrying.
+[2026-02-20 21:31:31Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:31:31Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:31:31Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:31:31Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:31:31Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:31:31Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:31:31Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:31:31Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:31:31Z INFO MessageListener] Sleeping for 38.785 seconds before retrying.
+[2026-02-20 21:32:10Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:32:10Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:32:10Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:32:10Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:32:10Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:32:10Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:32:10Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:32:10Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:32:10Z INFO MessageListener] Sleeping for 59.761 seconds before retrying.
+[2026-02-20 21:33:10Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:33:10Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:33:10Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:33:10Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:33:10Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:33:10Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:33:10Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:33:11Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:33:11Z INFO MessageListener] Sleeping for 41.563 seconds before retrying.
+[2026-02-20 21:33:52Z ERR  MessageListener] Catch exception during get next message.
+[2026-02-20 21:33:52Z ERR  MessageListener] System.Security.Cryptography.CryptographicException: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+   at GitHub.Runner.Listener.Configuration.RSAEncryptedFileKeyManager.GetKey()
+   at GitHub.Services.WebApi.VssSigningCredentials.RSASigningToken.GetSignature(Byte[] input)
+   at GitHub.Services.WebApi.VssSigningCredentials.SignData(Byte[] input)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.GetSignature(JWTHeader header, JWTPayload payload, JWTAlgorithm alg, VssSigningCredentials signingCredentials)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, DateTime issuedAt, IEnumerable`1 additionalClaims, JsonWebToken actor, String actorToken, VssSigningCredentials credentials, Boolean allowExpiredCertificate)
+   at GitHub.Services.WebApi.Jwt.JsonWebToken.Create(String issuer, String audience, DateTime validFrom, DateTime validTo, IEnumerable`1 additionalClaims, VssSigningCredentials credentials)
+   at GitHub.Services.OAuth.VssOAuthJwtBearerAssertion.GetBearerToken()
+   at GitHub.Services.OAuth.VssOAuthJwtBearerClientCredential.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthClientCredential.GitHub.Services.OAuth.IVssOAuthTokenParameterProvider.SetParameters(IDictionary`2 parameters)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.CreateRequestContent(IVssOAuthTokenParameterProvider[] parameterProviders)
+   at GitHub.Services.OAuth.VssOAuthTokenHttpClient.GetTokenAsync(VssOAuthGrant grant, VssOAuthClientCredential credential, VssOAuthTokenParameters tokenParameters, CancellationToken cancellationToken)
+   at GitHub.Services.OAuth.VssOAuthTokenProvider.OnGetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenOperation.GetTokenAsync(VssTraceActivity traceActivity)
+   at GitHub.Services.Common.IssuedTokenProvider.GetTokenAsync(IssuedToken failedToken, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at GitHub.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.<SendAsync>g__Core|83_0(HttpRequestMessage request, HttpCompletionOption completionOption, CancellationTokenSource cts, Boolean disposeCts, CancellationTokenSource pendingRequestsCts, CancellationToken originalCancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at GitHub.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at GitHub.Runner.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2026-02-20 21:33:52Z INFO MessageListener] Retriable exception: RSA key file C:\Users\jramos\Desktop\mold-change-dashboard motus\runner\.credentials_rsaparams was not found
+[2026-02-20 21:33:52Z INFO RunnerServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2026-02-20 21:33:52Z INFO RunnerServer] EstablishVssConnection
+[2026-02-20 21:33:52Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-02-20 21:33:52Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-02-20 21:33:53Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-02-20 21:33:53Z INFO MessageListener] Sleeping for 38.687 seconds before retrying.
