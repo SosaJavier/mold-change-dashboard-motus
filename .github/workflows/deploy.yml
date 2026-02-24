@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Deploy application
         run: |
-          cd "C:\Apps Saltillo\mold-change-dashboard-motus"
+          cd "C:\Apps Saltillo\mold-change-dashboard motus"
           git pull
           pnpm install
           pnpm build
