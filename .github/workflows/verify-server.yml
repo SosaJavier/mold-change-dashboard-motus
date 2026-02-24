@@ -2,28 +2,25 @@ name: Deploy to Server
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
   deploy:
-    # Si ya corriges el label del runner, puedes volver a: [self-hosted, server-motus]
-    runs-on: self-hosted
+    runs-on: self-hosted  # Cuando vuelvas a tener label personalizado, puedes usar [self-hosted, server-motus]
 
     steps:
-      - name: Set UTF-8 codepage (pretty logs)
+      - name: Set UTF-8 (logs claros)
         shell: powershell
         run: |
           chcp 65001 > $null
           $OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
 
-      - name: Git safe directory (si el runner sigue como NETWORK SERVICE)
-        shell: powershell
-        run: |
-          git config --global --add safe.directory 'C:/Apps Saltillo/mold-change-dashboard motus'
+      # - name: (Opcional) Git safe directory
+      #   shell: powershell
+      #   run: git config --global --add safe.directory 'C:/Apps Saltillo/mold-change-dashboard motus'
 
-      - name: Enable corepack / pnpm
+      - name: Habilitar corepack/pnpm (por si PATH de servicio difiere)
         shell: powershell
         run: |
           corepack enable
@@ -45,8 +42,8 @@ jobs:
           }
 
           Set-Location $targetPath
-          
-          Write-Host ">>> Sincronizando código desde GitHub..."
+
+          Write-Host ">>> Sincronizando código..."
           git fetch origin main
           git checkout main
           git reset --hard origin/main
@@ -59,4 +56,4 @@ jobs:
           pnpm build
 
           Write-Host ">>> Reiniciando PM2..."
-          pm2 restart Apps_Motus || exit 1
+          pm2 restart Apps_Motus
