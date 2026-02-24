@@ -7,74 +7,93 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted  # funciona con NETWORK SERVICE
+    runs-on: self-hosted   # Runner en NETWORK SERVICE
 
     steps:
       - name: UTF-8 output
         shell: powershell
         run: chcp 65001
 
-      - name: Git safe directory for NetworkService
+      - name: Git safe directory (NetworkService)
         shell: powershell
         run: |
           git config --global --add safe.directory 'C:/Apps Saltillo/mold-change-dashboard motus'
 
-      - name: Install pnpm for NETWORK SERVICE
+      - name: Install pnpm for NetworkService (global + PATH)
         shell: powershell
         run: |
           $ErrorActionPreference = "Stop"
 
-          # 1) Forzar TLS moderno
+          # Forzar TLS moderno para npm
           [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-          # 2) Mostrar node/npm
+          # Mostrar node/npm
           where.exe node
           node -v
           where.exe npm
           npm -v
 
-          # 3) Fijar prefix para instalar pnpm sin tocar Program Files
+          # Usar prefijo escribible por NetworkService (AppData\Roaming\npm)
           $prefix = Join-Path $env:APPDATA 'npm'
-          npm config set prefix "$prefix"
           npm config set fund false
           npm config set update-notifier false
+          npm config set prefix "$prefix"
 
-          # 4) Instalar pnpm global para NETWORK SERVICE
+          # Instalar pnpm global para esta cuenta de servicio
           npm install -g pnpm
 
-          # 5) Agregar la ruta global al PATH de ESTA sesión
+          # Añadir binarios globales de npm al PATH de ESTA sesión
           $env:Path = "$env:Path;$prefix"
-          Write-Host ">>> Ruta npm global: $prefix"
-
-          # 6) Validar pnpm
+          Write-Host ">>> npm global prefix: $prefix"
           where.exe pnpm
           pnpm -v
 
-      - name: Deploy application
+      - name: Deploy (sync + install + build + PM2)
         shell: powershell
         run: |
           $ErrorActionPreference = "Stop"
 
-          $targetPath = "C:\Apps Saltillo\mold-change-dashboard motus"
-          Write-Host ">>> Deploy en: $targetPath"
+          $rootPath = "C:\Apps Saltillo\mold-change-dashboard motus"
+          if (-not (Test-Path $rootPath)) { throw "No existe la carpeta raíz: $rootPath" }
+          Write-Host ">>> Raíz del deploy: $rootPath"
+          Set-Location $rootPath
 
-          if (-not (Test-Path $targetPath)) {
-            throw "ERROR: La carpeta no existe: $targetPath"
-          }
-
-          Set-Location $targetPath
-          
+          # --- Sincronizar con remoto ---
           Write-Host ">>> Sincronizando código..."
-          git fetch origin main
+          git fetch --all
           git checkout main
           git reset --hard origin/main
           git clean -fd
 
-          Write-Host ">>> Instalando dependencias..."
+          # --- Detectar carpeta de proyecto (package.json) ---
+          function Find-PackageJsonFolder {
+            param([string]$start)
+            if (Test-Path (Join-Path $start 'package.json')) { return $start }
+            $candidates = Get-ChildItem -Path $start -Directory -Force | Where-Object {
+              Test-Path (Join-Path $_.FullName 'package.json')
+            }
+            if ($candidates -and $candidates.Count -ge 1) { return $candidates[0].FullName }
+            return $start
+          }
+          $projPath = Find-PackageJsonFolder -start $rootPath
+          Write-Host ">>> Carpeta de proyecto detectada: $projPath"
+          Set-Location $projPath
+
+          if (-not (Test-Path (Join-Path $projPath 'package.json'))) {
+            throw "No se encontró package.json ni en $rootPath ni en una subcarpeta. Verifica la estructura."
+          }
+
+          # --- Instalar dependencias ---
+          Write-Host ">>> pnpm install (frozen)..."
           pnpm install --frozen-lockfile
 
-          Write-Host ">>> Construyendo proyecto..."
+          # --- Build ---
+          Write-Host ">>> pnpm build..."
           pnpm build
 
+          # --- PM2 restart ---
           Write-Host ">>> Reiniciando PM2..."
+          # Si usas ecosystem.config.js en la RAÍZ del proyecto, descomenta estas dos líneas y comenta la de 'restart':
+          # pm2 startOrRestart (Join-Path $projPath 'ecosystem.config.js')
+          # pm2 save
           pm2 restart Apps_Motus
