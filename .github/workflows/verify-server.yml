@@ -10,50 +10,37 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Set UTF-8 (logs claros)
+      - name: UTF-8
         shell: powershell
-        run: |
-          chcp 65001 > $null
-          $OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
+        run: chcp 65001
 
-      # Instalar pnpm PARA EL USUARIO (sin admin), y agregarlo al PATH de esta sesión
-      - name: Install pnpm (user scope)
+      - name: Git safe directory for NetworkService
         shell: powershell
         run: |
-          iwr https://get.pnpm.io/install.ps1 -UseBasicParsing | iex
-          $pnpmPath = Join-Path $env:APPDATA 'pnpm'
-          $env:Path = "$env:Path;$pnpmPath"
-          Write-Host ">>> pnpm path: $pnpmPath"
+          git config --global --add safe.directory 'C:/Apps Saltillo/mold-change-dashboard motus'
+
+      - name: Show node/pnpm
+        shell: powershell
+        run: |
+          where.exe node
+          node -v
           where.exe pnpm
           pnpm -v
-          node -v
 
-      - name: Deploy application
+      - name: Deploy
         shell: powershell
         run: |
           $ErrorActionPreference = "Stop"
-
           $targetPath = "C:\Apps Saltillo\mold-change-dashboard motus"
-          Write-Host ">>> Iniciando despliegue en: $targetPath"
-          
-          if (-not (Test-Path $targetPath)) {
-            Write-Error "Error: El directorio destino no existe."
-            exit 1
-          }
 
           Set-Location $targetPath
 
-          Write-Host ">>> Sincronizando código..."
           git fetch origin main
           git checkout main
           git reset --hard origin/main
           git clean -fd
 
-          Write-Host ">>> Instalando dependencias (pnpm)..."
           pnpm install --frozen-lockfile
-
-          Write-Host ">>> Construyendo proyecto..."
           pnpm build
 
-          Write-Host ">>> Reiniciando PM2..."
           pm2 restart Apps_Motus
