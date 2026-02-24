@@ -7,9 +7,9 @@ import { LINEAS } from "@/lib/types"
 import type { Linea } from "@/lib/types"
 
 const lineaLabels: Record<Linea, string> = {
-  TB1: "Termoformadora B1",
-  TB2: "Termoformadora B2",
-  TB3: "Termoformadora B3",
+  TB1: "Termoformadora 1",
+  TB2: "Termoformadora 2",
+  TB3: "Termoformadora 3",
   EDF1: "Estacion de Formado 1",
   EDF2: "Estacion de Formado 2",
 }

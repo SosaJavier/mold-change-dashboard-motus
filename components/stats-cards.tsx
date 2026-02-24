@@ -7,48 +7,61 @@ import { useMoldChanges } from "@/hooks/use-mold-changes"
 export function StatsCards() {
   const { changes } = useMoldChanges()
 
-  const todayStr = new Date().toDateString()
-  const todayChanges = changes.filter(
-    (c) => new Date(c.fechaInicio).toDateString() === todayStr
-  )
+  const now = new Date()
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
 
-  const completados = todayChanges.filter((c) => c.estado === "completado")
-  const enProceso = todayChanges.filter((c) => c.estado === "en_proceso")
-  const avgTime =
-    completados.length > 0
-      ? Math.round(
-        completados.reduce((sum, c) => sum + c.tiempoMuerto, 0) / completados.length
-      )
-      : 0
+  // 1. Cambios Hoy
+  const todayChanges = changes.filter(c => new Date(c.fechaInicio) >= startOfToday)
+  const todayCompleted = todayChanges.filter(c => c.estado === "completado").length
+
+  // 2. Completados Semana
+  const weeklyChanges = changes.filter(c => new Date(c.fechaInicio) >= sevenDaysAgo)
+  const weeklyCompletedCount = weeklyChanges.filter(c => c.estado === "completado").length
+  const weeklyEffectivity = weeklyChanges.length > 0
+    ? Math.round((weeklyCompletedCount / weeklyChanges.length) * 100)
+    : 0
+
+  // 3. En Proceso
+  const enProceso = changes.filter(c => c.estado === "en_proceso")
+  const activeMolds = enProceso.length > 0
+    ? enProceso.map(c => c.moldeNuevo).join(", ")
+    : "Ninguno"
+
+  // 4. Tiempo Promedio Semanal
+  const weeklyCompleted = weeklyChanges.filter(c => c.estado === "completado")
+  const avgTime = weeklyCompleted.length > 0
+    ? Math.round(weeklyCompleted.reduce((sum, c) => sum + (c.tiempoMuerto || 0), 0) / weeklyCompleted.length)
+    : 0
 
   const stats = [
     {
       label: "Cambios Hoy",
       value: todayChanges.length,
       icon: BarChart3,
-      change: "+2 vs ayer",
+      change: `${todayCompleted} completado(s)`,
       trend: "up" as const,
     },
     {
-      label: "Completados",
-      value: completados.length,
+      label: "Completados Semana",
+      value: weeklyCompletedCount,
       icon: CheckCircle2,
-      change: `${todayChanges.length > 0 ? Math.round((completados.length / todayChanges.length) * 100) : 0}%`,
+      change: `${weeklyEffectivity}% efectividad`,
       trend: "up" as const,
     },
     {
       label: "En Proceso",
       value: enProceso.length,
       icon: Loader2,
-      change: enProceso.length > 0 ? "Activos" : "Ninguno",
+      change: activeMolds,
       trend: enProceso.length > 0 ? ("down" as const) : ("up" as const),
     },
     {
-      label: "Tiempo Prom.",
+      label: "Tiempo Prom. Semanal",
       value: `${avgTime} min`,
       icon: Clock,
-      change: avgTime <= 60 ? "Dentro de meta" : "Fuera de meta",
-      trend: avgTime <= 60 ? ("up" as const) : ("down" as const),
+      change: avgTime <= 45 ? "Dentro de meta" : "Fuera de meta",
+      trend: avgTime <= 45 ? ("up" as const) : ("down" as const),
     },
   ]
 

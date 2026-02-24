@@ -167,11 +167,11 @@ export function LiveCounter({
           supervisor,
           turno,
           motivo,
-          estado: "pendiente",
+          estado: "en_proceso",
           fechaInicio: new Date().toISOString(),
           fechaFin: null,
           tiempoMuerto: 0,
-          observaciones: "PENDIENTE | En curso...",
+          observaciones: "EN PROCESO | Cronometro iniciado",
         }
 
         const res = await addChange(payload)
