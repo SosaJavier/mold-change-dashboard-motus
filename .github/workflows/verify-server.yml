@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted  # Cuando vuelvas a tener label personalizado, puedes usar [self-hosted, server-motus]
+    runs-on: self-hosted
 
     steps:
       - name: Set UTF-8 (logs claros)
@@ -16,15 +16,15 @@ jobs:
           chcp 65001 > $null
           $OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
 
-      # - name: (Opcional) Git safe directory
-      #   shell: powershell
-      #   run: git config --global --add safe.directory 'C:/Apps Saltillo/mold-change-dashboard motus'
-
-      - name: Habilitar corepack/pnpm (por si PATH de servicio difiere)
+      # Instalar pnpm PARA EL USUARIO (sin admin), y agregarlo al PATH de esta sesión
+      - name: Install pnpm (user scope)
         shell: powershell
         run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
+          iwr https://get.pnpm.io/install.ps1 -UseBasicParsing | iex
+          $pnpmPath = Join-Path $env:APPDATA 'pnpm'
+          $env:Path = "$env:Path;$pnpmPath"
+          Write-Host ">>> pnpm path: $pnpmPath"
+          where.exe pnpm
           pnpm -v
           node -v
 
@@ -57,3 +57,4 @@ jobs:
 
           Write-Host ">>> Reiniciando PM2..."
           pm2 restart Apps_Motus
+``
