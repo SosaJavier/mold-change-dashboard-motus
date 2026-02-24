@@ -1,20 +1,42 @@
-name: Verify Server Connection
+
+name: Deploy to Server
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  verify:
-    runs-on: self-hosted
+  deploy:
+    runs-on: [self-hosted, server-motus]
 
     steps:
-      - name: Confirm runner is active
-        run: |
-          echo "Confirming runner is active on the server..."
-          echo "Hostname: $env:COMPUTERNAME"
-          echo "User: $env:USERNAME"
-          echo "Current Path: $(Get-Location)"
-          echo "Server Time: $(Get-Date)"
+      - name: Deploy application
         shell: powershell
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          $targetPath = "C:\Apps Saltillo\mold-change-dashboard motus"
+          Write-Host ">>> Iniciando despliegue en: $targetPath"
+          
+          if (-not (Test-Path $targetPath)) {
+            Write-Error "Error: El directorio destino no existe."
+            exit 1
+          }
+          
+          Set-Location $targetPath
+          
+          Write-Host ">>> Sincronizando código desde GitHub..."
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
+          
+          Write-Host ">>> Instalando dependencias (pnpm)..."
+          pnpm install --frozen-lockfile
+          
+          Write-Host ">>> Construyendo proyecto..."
+          pnpm build
+          
+          Write-Host ">>> Reiniciando PM2..."
+          pm2 restart Apps_Motus
