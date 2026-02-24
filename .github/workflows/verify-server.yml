@@ -1,4 +1,3 @@
-
 name: Deploy to Server
 
 on:
@@ -9,9 +8,29 @@ on:
 
 jobs:
   deploy:
+    # Si ya corriges el label del runner, puedes volver a: [self-hosted, server-motus]
     runs-on: self-hosted
 
     steps:
+      - name: Set UTF-8 codepage (pretty logs)
+        shell: powershell
+        run: |
+          chcp 65001 > $null
+          $OutputEncoding = [Console]::OutputEncoding = [Text.UTF8Encoding]::new()
+
+      - name: Git safe directory (si el runner sigue como NETWORK SERVICE)
+        shell: powershell
+        run: |
+          git config --global --add safe.directory 'C:/Apps Saltillo/mold-change-dashboard motus'
+
+      - name: Enable corepack / pnpm
+        shell: powershell
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+          pnpm -v
+          node -v
+
       - name: Deploy application
         shell: powershell
         run: |
@@ -24,19 +43,20 @@ jobs:
             Write-Error "Error: El directorio destino no existe."
             exit 1
           }
-          
+
           Set-Location $targetPath
           
           Write-Host ">>> Sincronizando código desde GitHub..."
           git fetch origin main
           git checkout main
           git reset --hard origin/main
-          
+          git clean -fd
+
           Write-Host ">>> Instalando dependencias (pnpm)..."
           pnpm install --frozen-lockfile
-          
+
           Write-Host ">>> Construyendo proyecto..."
           pnpm build
-          
+
           Write-Host ">>> Reiniciando PM2..."
-          pm2 restart Apps_Motus
+          pm2 restart Apps_Motus || exit 1
