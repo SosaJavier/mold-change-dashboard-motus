@@ -1,9 +1,0 @@
-﻿{
-  "agentId": 2,
-  "agentName": "WindowsRunner-Motus",
-  "poolId": 1,
-  "poolName": "Default",
-  "serverUrl": "https://pipelinesghubeus7.actions.githubusercontent.com/NEKryiqQ3E0Lej0i4Pk3xrVrvZYaPytuDCx35Nw7k1hlB40cAz/",
-  "gitHubUrl": "https://github.com/SosaJavier/mold-change-dashboard-motus",
-  "workFolder": "_work"
-}
