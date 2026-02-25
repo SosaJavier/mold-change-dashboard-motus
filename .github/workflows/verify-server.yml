@@ -14,7 +14,7 @@ jobs:
 
       - name: Verificar servidor
         run: |
-          # Aquí va el contenido de tu verify-server.yml
+          # Aquí puedes agregar los checks que tenías en verify-server.yml
           Write-Host "Verificación del servidor completada"
 
   deploy:
@@ -38,7 +38,7 @@ jobs:
         run: |
           pnpm run build
 
-      - name: Copiar solo archivos nuevos/modificados a carpeta web
+      - name: Copiar archivos nuevos/modificados a carpeta web
         run: |
           $SRC = "C:\\Apps Saltillo\\mold-change-dashboard motus\\dist\\*"
           $DEST = "C:\\Apps Saltillo\\web-mold-change\\"
