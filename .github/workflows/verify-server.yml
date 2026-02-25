@@ -14,8 +14,8 @@ jobs:
 
       - name: Verificar servidor
         run: |
-          REM Aquí va el contenido de tu verify-server.yml
-          echo "Verificación del servidor completada"
+          # Aquí va el contenido de tu verify-server.yml
+          Write-Host "Verificación del servidor completada"
 
   deploy:
     needs: verify-server
@@ -40,10 +40,10 @@ jobs:
 
       - name: Copiar solo archivos nuevos/modificados a carpeta web
         run: |
-          set SRC="C:\\Apps Saltillo\\mold-change-dashboard motus\\dist\\*"
-          set DEST="C:\\Apps Saltillo\\web-mold-change\\"
-          robocopy %SRC% %DEST% /MIR /XO /LOG:C:\\Apps\Saltillo\\deploy_log.txt
+          $SRC = "C:\\Apps Saltillo\\mold-change-dashboard motus\\dist\\*"
+          $DEST = "C:\\Apps Saltillo\\web-mold-change\\"
+          robocopy $SRC $DEST /MIR /XO /LOG:C:\\Apps\Saltillo\\deploy_log.txt
 
       - name: Mostrar log de deploy
         run: |
-          type C:\\Apps\Saltillo\\deploy_log.txt
+          Get-Content C:\\Apps\Saltillo\\deploy_log.txt
