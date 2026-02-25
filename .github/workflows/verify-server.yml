@@ -1,4 +1,4 @@
-name: Verify & Deploy Mold Change Dashboard
+name: Deploy Mold Change Dashboard
 
 on:
   push:
@@ -6,42 +6,29 @@ on:
       - main
 
 jobs:
-  verify-server:
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Verificar servidor
-        run: |
-          Write-Host "Verificación del servidor completada"
-
   deploy:
-    needs: verify-server
     runs-on: self-hosted
+
     steps:
-      - name: Pull repo actualizado
-        working-directory: "C:\\Apps Saltillo\\mold-change-dashboard motus"
-        run: |
-          git reset --hard
-          git clean -fd
-          git pull origin main
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Instalar dependencias
-        working-directory: "C:\\Apps Saltillo\\mold-change-dashboard motus"
-        run: |
-          & "C:\Users\jramos\AppData\Roaming\npm\pnpm.cmd" install
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Build proyecto
-        working-directory: "C:\\Apps Saltillo\\mold-change-dashboard motus"
-        run: |
-          & "C:\Users\jramos\AppData\Roaming\npm\pnpm.cmd" run build
+      - name: Install pnpm
+        run: npm install -g pnpm
 
-      - name: Copiar archivos a carpeta web
-        run: |
-          $SRC = "C:\\Apps Saltillo\\mold-change-dashboard motus\\dist\\*"
-          $DEST = "C:\\Apps Saltillo\\web-mold-change\\"
-          robocopy $SRC $DEST /MIR /XO /LOG:C:\\Apps\Saltillo\\deploy_log.txt
+      - name: Install dependencies
+        run: pnpm install
 
-      - name: Mostrar log de deploy
+      - name: Build project
+        run: pnpm run build
+
+      - name: Deploy to web folder
         run: |
-          Get-Content C:\\Apps\Saltillo\\deploy_log.txt
+          $SRC = "$env:GITHUB_WORKSPACE\dist\*"
+          $DEST = "C:\Apps Saltillo\web-mold-change\"
+          robocopy $SRC $DEST /MIR
