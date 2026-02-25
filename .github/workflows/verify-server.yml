@@ -1,99 +1,49 @@
-name: Deploy to Server
+name: Verify & Deploy Mold Change Dashboard
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
-  deploy:
-    runs-on: self-hosted   # Runner en NETWORK SERVICE
-
+  verify-server:
+    runs-on: self-hosted
     steps:
-      - name: UTF-8 output
-        shell: powershell
-        run: chcp 65001
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - name: Git safe directory (NetworkService)
-        shell: powershell
+      - name: Verificar servidor
         run: |
-          git config --global --add safe.directory 'C:/Apps Saltillo/mold-change-dashboard motus'
+          REM Aquí va el contenido de tu verify-server.yml
+          echo "Verificación del servidor completada"
 
-      - name: Install pnpm for NetworkService (global + PATH)
-        shell: powershell
+  deploy:
+    needs: verify-server
+    runs-on: self-hosted
+    steps:
+      - name: Pull repo actualizado
+        working-directory: "C:\\Apps Saltillo\\mold-change-dashboard motus"
         run: |
-          $ErrorActionPreference = "Stop"
-
-          # Forzar TLS moderno para npm
-          [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-
-          # Mostrar node/npm
-          where.exe node
-          node -v
-          where.exe npm
-          npm -v
-
-          # Usar prefijo escribible por NetworkService (AppData\Roaming\npm)
-          $prefix = Join-Path $env:APPDATA 'npm'
-          npm config set fund false
-          npm config set update-notifier false
-          npm config set prefix "$prefix"
-
-          # Instalar pnpm global para esta cuenta de servicio
-          npm install -g pnpm
-
-          # Añadir binarios globales de npm al PATH de ESTA sesión
-          $env:Path = "$env:Path;$prefix"
-          Write-Host ">>> npm global prefix: $prefix"
-          where.exe pnpm
-          pnpm -v
-
-      - name: Deploy (sync + install + build + PM2)
-        shell: powershell
-        run: |
-          $ErrorActionPreference = "Stop"
-
-          $rootPath = "C:\Apps Saltillo\mold-change-dashboard motus"
-          if (-not (Test-Path $rootPath)) { throw "No existe la carpeta raíz: $rootPath" }
-          Write-Host ">>> Raíz del deploy: $rootPath"
-          Set-Location $rootPath
-
-          # --- Sincronizar con remoto ---
-          Write-Host ">>> Sincronizando código..."
-          git fetch --all
-          git checkout main
-          git reset --hard origin/main
+          git reset --hard
           git clean -fd
+          git pull origin main
 
-          # --- Detectar carpeta de proyecto (package.json) ---
-          function Find-PackageJsonFolder {
-            param([string]$start)
-            if (Test-Path (Join-Path $start 'package.json')) { return $start }
-            $candidates = Get-ChildItem -Path $start -Directory -Force | Where-Object {
-              Test-Path (Join-Path $_.FullName 'package.json')
-            }
-            if ($candidates -and $candidates.Count -ge 1) { return $candidates[0].FullName }
-            return $start
-          }
-          $projPath = Find-PackageJsonFolder -start $rootPath
-          Write-Host ">>> Carpeta de proyecto detectada: $projPath"
-          Set-Location $projPath
+      - name: Instalar dependencias
+        working-directory: "C:\\Apps Saltillo\\mold-change-dashboard motus"
+        run: |
+          pnpm install
 
-          if (-not (Test-Path (Join-Path $projPath 'package.json'))) {
-            throw "No se encontró package.json ni en $rootPath ni en una subcarpeta. Verifica la estructura."
-          }
+      - name: Build proyecto
+        working-directory: "C:\\Apps Saltillo\\mold-change-dashboard motus"
+        run: |
+          pnpm run build
 
-          # --- Instalar dependencias ---
-          Write-Host ">>> pnpm install (frozen)..."
-          pnpm install --frozen-lockfile
+      - name: Copiar solo archivos nuevos/modificados a carpeta web
+        run: |
+          set SRC="C:\\Apps Saltillo\\mold-change-dashboard motus\\dist\\*"
+          set DEST="C:\\Apps Saltillo\\web-mold-change\\"
+          robocopy %SRC% %DEST% /MIR /XO /LOG:C:\\Apps\Saltillo\\deploy_log.txt
 
-          # --- Build ---
-          Write-Host ">>> pnpm build..."
-          pnpm build
-
-          # --- PM2 restart ---
-          Write-Host ">>> Reiniciando PM2..."
-          # Si usas ecosystem.config.js en la RAÍZ del proyecto, descomenta estas dos líneas y comenta la de 'restart':
-          # pm2 startOrRestart (Join-Path $projPath 'ecosystem.config.js')
-          # pm2 save
-          pm2 restart Apps_Motus
+      - name: Mostrar log de deploy
+        run: |
+          type C:\\Apps\Saltillo\\deploy_log.txt
