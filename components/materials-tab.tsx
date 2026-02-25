@@ -204,6 +204,7 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
     const [scheduleMoldId, setScheduleMoldId] = useState("")
     const [scheduleDesc, setScheduleDesc] = useState("")
     const [scheduleLinea, setScheduleLinea] = useState("")
+    const [isAddingSchedule, setIsAddingSchedule] = useState(false)
 
     // Local state for mold info form
     const [moldId, setMoldId] = useState("")
@@ -295,7 +296,7 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
         { name: "Mensual", tiempo: stats.monthly, fill: "hsl(142, 72%, 42%)" },
     ]
 
-    const handleCreateSchedule = () => {
+    const handleCreateSchedule = async () => {
         if (!scheduleTime || !scheduleMoldId || !scheduleLinea) {
             toast.error("Hora, Linea y ID de Molde requeridos")
             return
@@ -310,11 +311,19 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
             scheduledDate.setDate(scheduledDate.getDate() + 1)
         }
 
-        addSchedule(scheduledDate, scheduleMoldId, scheduleDesc, scheduleLinea)
-        setScheduleTime("")
-        setScheduleMoldId("")
-        setScheduleDesc("")
-        setScheduleLinea("")
+        setIsAddingSchedule(true)
+        try {
+            await addSchedule(scheduledDate, scheduleMoldId, scheduleDesc, scheduleLinea)
+            setScheduleTime("")
+            setScheduleMoldId("")
+            setScheduleDesc("")
+            setScheduleLinea("")
+        } catch (error) {
+            // Error is already handled/toasted by useScheduledChange
+            console.error("Error creating schedule:", error)
+        } finally {
+            setIsAddingSchedule(false)
+        }
     }
 
     const handleStartEdit = (id: string, dateStr: string) => {
@@ -428,7 +437,13 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
                                     </div>
                                 </div>
 
-                                <Button onClick={handleCreateSchedule} className="w-full">Agendar</Button>
+                                <Button
+                                    onClick={handleCreateSchedule}
+                                    className="w-full"
+                                    disabled={isAddingSchedule}
+                                >
+                                    {isAddingSchedule ? "Programando..." : "Agendar"}
+                                </Button>
 
                                 {/* Mini List of Upcoming */}
                                 <div className="mt-6 pt-4 border-t">
