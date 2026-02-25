@@ -31,14 +31,14 @@ jobs:
       - name: Instalar dependencias
         working-directory: "C:\\Apps Saltillo\\mold-change-dashboard motus"
         run: |
-          pnpm install
+          "C:\\Users\\jramos\\AppData\\Roaming\\npm\\pnpm.cmd" install
 
       - name: Build proyecto
         working-directory: "C:\\Apps Saltillo\\mold-change-dashboard motus"
         run: |
-          pnpm run build
+          "C:\\Users\\jramos\\AppData\\Roaming\\npm\\pnpm.cmd" run build
 
-      - name: Copiar archivos nuevos/modificados a carpeta web
+      - name: Copiar solo archivos nuevos/modificados a carpeta web
         run: |
           $SRC = "C:\\Apps Saltillo\\mold-change-dashboard motus\\dist\\*"
           $DEST = "C:\\Apps Saltillo\\web-mold-change\\"
