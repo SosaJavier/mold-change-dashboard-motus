@@ -1,4 +1,4 @@
-nname: Verify & Deploy Mold Change Dashboard
+name: Verify & Deploy Mold Change Dashboard
 
 on:
   push:
