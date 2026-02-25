@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react"
 import { toast } from "sonner"
 
-const STORAGE_KEY = "mold-dashboard-scheduled-changes-v2"
-
 export interface ScheduledChange {
     id: string
     date: string // ISO string
@@ -13,63 +11,95 @@ export interface ScheduledChange {
 
 export function useScheduledChange() {
     const [schedules, setSchedules] = useState<ScheduledChange[]>([])
+    const [isLoading, setIsLoading] = useState(true)
+
+    const fetchSchedules = async () => {
+        setIsLoading(true)
+        try {
+            const response = await fetch('/api/scheduled-changes')
+            if (!response.ok) throw new Error("Failed to fetch")
+            const data = await response.json()
+            setSchedules(data)
+        } catch (error) {
+            console.error("Failed to load schedules", error)
+            toast.error("Error al cargar cambios programados")
+        } finally {
+            setIsLoading(false)
+        }
+    }
 
     useEffect(() => {
-        const saved = localStorage.getItem(STORAGE_KEY)
-        if (saved) {
-            try {
-                const parsed = JSON.parse(saved) as ScheduledChange[]
-                // Filter out past events that are older than 24 hours (cleanup)
-                const now = new Date()
-                const valid = parsed.filter(s => new Date(s.date).getTime() > now.getTime() - 24 * 60 * 60 * 1000)
-                setSchedules(valid)
-            } catch (e) {
-                console.error("Failed to parse schedules", e)
-            }
-        }
+        fetchSchedules()
+
+        // Optional: Poll for changes every 30 seconds to keep devices in sync
+        const interval = setInterval(fetchSchedules, 30000)
+        return () => clearInterval(interval)
     }, [])
 
-    const saveSchedules = (newSchedules: ScheduledChange[]) => {
-        setSchedules(newSchedules)
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(newSchedules))
-    }
+    const addSchedule = async (date: Date, moldId: string, description: string, linea: string) => {
+        try {
+            const response = await fetch('/api/scheduled-changes', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ date: date.toISOString(), moldId, description, linea })
+            })
 
-    const addSchedule = (date: Date, moldId: string, description: string, linea: string) => {
-        const newSchedule: ScheduledChange = {
-            id: crypto.randomUUID(),
-            date: date.toISOString(),
-            moldId,
-            description,
-            linea
+            if (!response.ok) throw new Error("Failed to add")
+
+            const newSchedule = await response.json()
+            setSchedules(prev => [...prev, newSchedule].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()))
+            toast.success("Cambio programado correctamente")
+        } catch (error) {
+            console.error("Failed to add schedule", error)
+            toast.error("Error al programar cambio")
         }
-        const updated = [...schedules, newSchedule].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-        saveSchedules(updated)
-        toast.success("Cambio programado correctamente")
     }
 
-    const removeSchedule = (id: string) => {
-        const updated = schedules.filter(s => s.id !== id)
-        saveSchedules(updated)
-        toast.success("Programacion eliminada")
+    const removeSchedule = async (id: string) => {
+        try {
+            const response = await fetch(`/api/scheduled-changes/${id}`, {
+                method: 'DELETE'
+            })
+
+            if (!response.ok) throw new Error("Failed to remove")
+
+            setSchedules(prev => prev.filter(s => s.id !== id))
+            toast.success("Programacion eliminada")
+        } catch (error) {
+            console.error("Failed to remove schedule", error)
+            toast.error("Error al eliminar programacion")
+        }
     }
 
-    const updateSchedule = (id: string, newDate: Date) => {
-        const updated = schedules.map(s =>
-            s.id === id ? { ...s, date: newDate.toISOString() } : s
-        ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-        saveSchedules(updated)
-        toast.success("Horario actualizado correctamente")
+    const updateSchedule = async (id: string, newDate: Date) => {
+        try {
+            const response = await fetch(`/api/scheduled-changes/${id}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ date: newDate.toISOString() })
+            })
+
+            if (!response.ok) throw new Error("Failed to update")
+
+            setSchedules(prev => prev.map(s =>
+                s.id === id ? { ...s, date: newDate.toISOString() } : s
+            ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()))
+            toast.success("Horario actualizado correctamente")
+        } catch (error) {
+            console.error("Failed to update schedule", error)
+            toast.error("Error al actualizar programacion")
+        }
     }
 
-    // Get the *next* upcoming change (or the one currently waiting for confirmation)
-    // We just take the first one because the list is sorted by date, and users manually remove them.
     const nextChange = schedules.length > 0 ? schedules[0] : undefined
 
     return {
         schedules,
         nextChange,
+        isLoading,
         addSchedule,
         removeSchedule,
-        updateSchedule
+        updateSchedule,
+        refreshSchedules: fetchSchedules
     }
 }

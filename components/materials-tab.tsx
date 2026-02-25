@@ -212,13 +212,22 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
 
     // Persistence for Current Mold Info
     useEffect(() => {
-        const savedMoldId = localStorage.getItem("mold-dashboard-current-mold-id")
-        const savedCycleTime = localStorage.getItem("mold-dashboard-current-cycle-time")
-        const savedDescription = localStorage.getItem("mold-dashboard-current-description")
+        const fetchConfig = async () => {
+            try {
+                const res = await fetch('/api/materials-config')
+                if (!res.ok) throw new Error("Failed to fetch config")
+                const data = await res.json()
+                if (data.moldId) setMoldId(data.moldId)
+                if (data.cycleTime) setCycleTime(data.cycleTime)
+                if (data.descripcion) setDescription(data.descripcion)
+            } catch (error) {
+                console.error("Error fetching materials config:", error)
+            }
+        }
 
-        if (savedMoldId) setMoldId(savedMoldId)
-        if (savedCycleTime) setCycleTime(savedCycleTime)
-        if (savedDescription) setDescription(savedDescription)
+        fetchConfig()
+        const interval = setInterval(fetchConfig, 30000) // Poll every 30s
+        return () => clearInterval(interval)
     }, [])
 
 
@@ -339,16 +348,25 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
         }
     }
 
-    const handleSaveInfo = () => {
+    const handleSaveInfo = async () => {
         if (!moldId) {
             toast.error("Por favor ingrese un ID de Molde")
             return
         }
-        localStorage.setItem("mold-dashboard-current-mold-id", moldId)
-        localStorage.setItem("mold-dashboard-current-cycle-time", cycleTime)
-        localStorage.setItem("mold-dashboard-current-description", description)
 
-        toast.success("Información del molde guardada correctamente")
+        try {
+            const res = await fetch('/api/materials-config', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ moldId, cycleTime, description })
+            })
+
+            if (!res.ok) throw new Error("Failed to save")
+            toast.success("Información del molde guardada correctamente")
+        } catch (error) {
+            console.error("Error saving materials config:", error)
+            toast.error("Error al guardar la información")
+        }
     }
 
     // Only render simplified view if NOT fullscreen
