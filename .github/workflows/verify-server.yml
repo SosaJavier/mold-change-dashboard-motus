@@ -10,25 +10,35 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout repo
+      # 1️⃣ Descargar código del repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Instalar Node automáticamente
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 3️⃣ Instalar pnpm
       - name: Install pnpm
         run: npm install -g pnpm
 
+      # 4️⃣ Instalar dependencias
       - name: Install dependencies
         run: pnpm install
 
+      # 5️⃣ Build del proyecto
       - name: Build project
         run: pnpm run build
 
+      # 6️⃣ Verificar qué carpeta se generó (debug útil)
+      - name: Verify build output
+        run: dir
+
+      # 7️⃣ Deploy a carpeta web
       - name: Deploy to web folder
         run: |
-          $SRC = "$env:GITHUB_WORKSPACE\dist\*"
-          $DEST = "C:\Apps Saltillo\web-mold-change\"
+          $SRC = "$env:GITHUB_WORKSPACE\dist"
+          $DEST = "C:\Apps Saltillo\web-mold-change"
           robocopy $SRC $DEST /MIR
