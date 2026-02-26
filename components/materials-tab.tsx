@@ -201,9 +201,11 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
     // Edit state
     const [editingId, setEditingId] = useState<string | null>(null)
     const [editTime, setEditTime] = useState("")
+    const [editDate, setEditDate] = useState("")
 
     // Local state for scheduling form
     const [scheduleTime, setScheduleTime] = useState("")
+    const [scheduleDate, setScheduleDate] = useState(new Date().toISOString().split('T')[0])
     const [scheduleMoldId, setScheduleMoldId] = useState("")
     const [scheduleDesc, setScheduleDesc] = useState("")
     const [scheduleLinea, setScheduleLinea] = useState("")
@@ -292,9 +294,9 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
     const handleCreateSchedule = async () => {
         console.log("handleCreateSchedule triggered", { scheduleTime, scheduleMoldId, scheduleLinea });
 
-        if (!scheduleTime || !scheduleMoldId || !scheduleLinea) {
+        if (!scheduleTime || !scheduleDate || !scheduleMoldId || !scheduleLinea) {
             console.warn("Validation failed: missing fields");
-            toast.error("Hora, Linea y ID de Molde requeridos");
+            toast.error("Fecha, Hora, Linea y ID de Molde requeridos");
             return;
         }
 
@@ -305,11 +307,11 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
             return;
         }
 
-        const scheduledDate = new Date();
-        scheduledDate.setHours(hours, minutes, 0, 0);
-
-        if (scheduledDate < new Date()) {
-            scheduledDate.setDate(scheduledDate.getDate() + 1);
+        const scheduledDate = new Date(scheduleDate + 'T' + scheduleTime);
+        if (isNaN(scheduledDate.getTime())) {
+            console.error("Invalid combined date-time:", scheduleDate, scheduleTime);
+            toast.error("Fecha u hora inválida");
+            return;
         }
 
         setIsAddingSchedule(true);
@@ -337,21 +339,23 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
     const handleStartEdit = (id: string, dateStr: string) => {
         setEditingId(id)
         const date = new Date(dateStr)
+        const year = date.getFullYear()
+        const month = (date.getMonth() + 1).toString().padStart(2, '0')
+        const day = date.getDate().toString().padStart(2, '0')
         const hours = date.getHours().toString().padStart(2, '0')
         const minutes = date.getMinutes().toString().padStart(2, '0')
+        setEditDate(`${year}-${month}-${day}`)
         setEditTime(`${hours}:${minutes}`)
     }
 
     const handleSaveEdit = (id: string) => {
-        if (!editTime) return
+        if (!editTime || !editDate) return
 
-        const [hours, minutes] = editTime.split(":").map(Number)
-        const newDate = new Date()
-        newDate.setHours(hours, minutes, 0, 0)
+        const newDate = new Date(editDate + 'T' + editTime)
 
-        // If time is in the past for today, assume tomorrow
-        if (newDate < new Date()) {
-            newDate.setDate(newDate.getDate() + 1)
+        if (isNaN(newDate.getTime())) {
+            toast.error("Fecha u hora inválida")
+            return
         }
 
         updateSchedule(id, newDate)
@@ -420,15 +424,19 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
                             <CardContent className="space-y-4">
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-2">
+                                        <Label>Fecha</Label>
+                                        <Input type="date" value={scheduleDate} onChange={e => setScheduleDate(e.target.value)} min={new Date().toISOString().split('T')[0]} />
+                                    </div>
+                                    <div className="space-y-2">
                                         <Label>Hora</Label>
                                         <Input type="time" value={scheduleTime} onChange={e => setScheduleTime(e.target.value)} />
                                     </div>
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-2">
                                         <Label>ID Molde</Label>
                                         <Input value={scheduleMoldId} onChange={e => setScheduleMoldId(e.target.value)} placeholder="Ej. M-500" />
                                     </div>
-                                </div>
-                                <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-2">
                                         <Label>Linea</Label>
                                         <Select value={scheduleLinea} onValueChange={setScheduleLinea}>
@@ -440,10 +448,10 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
                                             </SelectContent>
                                         </Select>
                                     </div>
-                                    <div className="space-y-2">
-                                        <Label>Descripción (Opcional)</Label>
-                                        <Input value={scheduleDesc} onChange={e => setScheduleDesc(e.target.value)} placeholder="Detalles..." />
-                                    </div>
+                                </div>
+                                <div className="space-y-2">
+                                    <Label>Descripción (Opcional)</Label>
+                                    <Input value={scheduleDesc} onChange={e => setScheduleDesc(e.target.value)} placeholder="Detalles..." />
                                 </div>
 
                                 <Button
@@ -465,20 +473,35 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
                                                 <div key={s.id} className="flex items-center justify-between text-sm p-3 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors">
                                                     <div className="flex-1">
                                                         {isEditing ? (
-                                                            <div className="flex items-center gap-2">
-                                                                <Input
-                                                                    type="time"
-                                                                    className="h-8 w-24 text-xs"
-                                                                    value={editTime}
-                                                                    onChange={e => setEditTime(e.target.value)}
-                                                                />
+                                                            <div className="flex flex-col gap-2">
+                                                                <div className="flex items-center gap-2">
+                                                                    <Input
+                                                                        type="date"
+                                                                        className="h-8 w-32 text-xs"
+                                                                        value={editDate}
+                                                                        onChange={e => setEditDate(e.target.value)}
+                                                                    />
+                                                                    <Input
+                                                                        type="time"
+                                                                        className="h-8 w-24 text-xs"
+                                                                        value={editTime}
+                                                                        onChange={e => setEditTime(e.target.value)}
+                                                                    />
+                                                                </div>
                                                                 <span className="font-semibold text-primary">{s.moldId}</span>
                                                             </div>
                                                         ) : (
-                                                            <div className="flex items-center gap-2">
-                                                                <span className="font-bold font-mono bg-background px-1.5 rounded">{new Date(s.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-                                                                <span className="font-semibold text-primary">{s.moldId}</span>
-                                                                <span className="text-[10px] bg-primary/10 px-1.5 py-0.5 rounded text-primary">{s.linea}</span>
+                                                            <div className="flex flex-col">
+                                                                <div className="flex items-center gap-2">
+                                                                    <span className="font-bold font-mono bg-background px-1.5 rounded text-[10px]">
+                                                                        {new Date(s.date).toLocaleDateString([], { day: '2-digit', month: '2-digit' })}
+                                                                    </span>
+                                                                    <span className="font-bold font-mono bg-background px-1.5 rounded">
+                                                                        {new Date(s.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                                                                    </span>
+                                                                    <span className="font-semibold text-primary">{s.moldId}</span>
+                                                                </div>
+                                                                <span className="text-[10px] bg-primary/10 px-1.5 py-0.5 rounded text-primary w-fit mt-1">{s.linea}</span>
                                                             </div>
                                                         )}
                                                         <div className="text-xs text-muted-foreground mt-0.5 max-w-[200px] truncate">{s.description}</div>
