@@ -5,10 +5,10 @@ export const dynamic = "force-dynamic"
 
 export async function DELETE(
     request: Request,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
-        const { id } = params
+        const { id } = await params
         console.log(`DELETING scheduled change with ID: ${id}`);
         const result = await query("DELETE FROM programacion_cambios WHERE id = ?", [id])
         console.log("DELETE Result:", result);
@@ -21,10 +21,10 @@ export async function DELETE(
 
 export async function PATCH(
     request: Request,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
-        const { id } = params
+        const { id } = await params
         const body = await request.json()
         const { date } = body
 
