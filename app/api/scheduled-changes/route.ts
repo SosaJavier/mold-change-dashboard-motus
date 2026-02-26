@@ -6,9 +6,9 @@ export async function GET() {
         const results = await query(`
             SELECT 
                 id, 
-                fecha, 
+                fecha AS date, 
                 molde_id AS moldId, 
-                descripcion, 
+                descripcion AS description, 
                 linea,
                 created_at AS createdAt
             FROM programacion_cambios 
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
             id: newId,
             date,
             moldId,
-            description,
+            description: description || "",
             linea
         }, { status: 201 })
     } catch (error) {

@@ -48,11 +48,9 @@ export function useScheduledChange() {
 
             const newSchedule = await response.json()
             setSchedules(prev => [...prev, newSchedule].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()))
-            toast.success("Cambio programado correctamente")
             return newSchedule
         } catch (error) {
             console.error("Failed to add schedule", error)
-            toast.error("Error al programar cambio")
             throw error
         }
     }

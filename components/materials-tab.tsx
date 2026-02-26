@@ -297,32 +297,47 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
     ]
 
     const handleCreateSchedule = async () => {
+        console.log("handleCreateSchedule triggered", { scheduleTime, scheduleMoldId, scheduleLinea });
+
         if (!scheduleTime || !scheduleMoldId || !scheduleLinea) {
-            toast.error("Hora, Linea y ID de Molde requeridos")
-            return
+            console.warn("Validation failed: missing fields");
+            toast.error("Hora, Linea y ID de Molde requeridos");
+            return;
         }
 
-        const [hours, minutes] = scheduleTime.split(":").map(Number)
-        const now = new Date()
-        const scheduledDate = new Date()
-        scheduledDate.setHours(hours, minutes, 0, 0)
-
-        if (scheduledDate < now) {
-            scheduledDate.setDate(scheduledDate.getDate() + 1)
+        const [hours, minutes] = scheduleTime.split(":").map(Number);
+        if (isNaN(hours) || isNaN(minutes)) {
+            console.error("Invalid time format:", scheduleTime);
+            toast.error("Formato de hora inválido");
+            return;
         }
 
-        setIsAddingSchedule(true)
+        const scheduledDate = new Date();
+        scheduledDate.setHours(hours, minutes, 0, 0);
+
+        if (scheduledDate < new Date()) {
+            scheduledDate.setDate(scheduledDate.getDate() + 1);
+        }
+
+        setIsAddingSchedule(true);
+        const loadingToast = toast.loading("Programando cambio...");
+
         try {
-            await addSchedule(scheduledDate, scheduleMoldId, scheduleDesc, scheduleLinea)
-            setScheduleTime("")
-            setScheduleMoldId("")
-            setScheduleDesc("")
-            setScheduleLinea("")
+            console.log("Calling addSchedule with:", { scheduledDate: scheduledDate.toISOString(), scheduleMoldId, scheduleDesc, scheduleLinea });
+            await addSchedule(scheduledDate, scheduleMoldId, scheduleDesc, scheduleLinea);
+
+            toast.success("Cambio programado correctamente", { id: loadingToast });
+
+            // Clear form
+            setScheduleTime("");
+            setScheduleMoldId("");
+            setScheduleDesc("");
+            setScheduleLinea("");
         } catch (error) {
-            // Error is already handled/toasted by useScheduledChange
-            console.error("Error creating schedule:", error)
+            console.error("Error creating schedule:", error);
+            toast.error("Error al programar cambio", { id: loadingToast });
         } finally {
-            setIsAddingSchedule(false)
+            setIsAddingSchedule(false);
         }
     }
 
