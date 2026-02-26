@@ -1,14 +1,18 @@
 import { NextResponse } from "next/server"
 import { query } from "@/lib/db"
 
+export const dynamic = "force-dynamic"
+
 export async function DELETE(
     request: Request,
     { params }: { params: { id: string } }
 ) {
     try {
         const { id } = params
-        await query("DELETE FROM programacion_cambios WHERE id = ?", [id])
-        return NextResponse.json({ success: true })
+        console.log(`DELETING scheduled change with ID: ${id}`);
+        const result = await query("DELETE FROM programacion_cambios WHERE id = ?", [id])
+        console.log("DELETE Result:", result);
+        return NextResponse.json({ success: true, result })
     } catch (error) {
         console.error("DELETE Scheduled Change Error:", error)
         return NextResponse.json({ error: "Error al eliminar programacion" }, { status: 500 })
