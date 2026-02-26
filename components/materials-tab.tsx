@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useMoldChanges } from "@/hooks/use-mold-changes"
 import { useScheduledChange } from "@/hooks/use-scheduled-change"
+import useSWR from "swr"
 import type { ScheduledChange } from "@/hooks/use-scheduled-change"
 import { Clock, Save, Info, Maximize2, Minimize2, CalendarClock, Trash2, History, Package, Download, Pencil, Check, X } from "lucide-react"
 import { toast } from "sonner"
@@ -26,6 +27,8 @@ import {
     Legend
 } from "recharts"
 import { LINEAS } from "@/lib/types"
+
+const fetcher = (url: string) => fetch(url).then((r) => r.json())
 
 // ... inside component
 
@@ -211,25 +214,15 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
     const [cycleTime, setCycleTime] = useState("")
     const [description, setDescription] = useState("")
 
-    // Persistence for Current Mold Info
-    useEffect(() => {
-        const fetchConfig = async () => {
-            try {
-                const res = await fetch('/api/materials-config')
-                if (!res.ok) throw new Error("Failed to fetch config")
-                const data = await res.json()
-                if (data.moldId) setMoldId(data.moldId)
-                if (data.cycleTime) setCycleTime(data.cycleTime)
-                if (data.descripcion) setDescription(data.descripcion)
-            } catch (error) {
-                console.error("Error fetching materials config:", error)
-            }
+    // Persistence for Current Mold Info using SWR for auto-sync
+    const { data: config, mutate: mutateConfig } = useSWR('/api/materials-config', fetcher, {
+        refreshInterval: 5000,
+        onSuccess: (data) => {
+            if (data.moldId) setMoldId(data.moldId)
+            if (data.cycleTime) setCycleTime(data.cycleTime)
+            if (data.descripcion) setDescription(data.descripcion)
         }
-
-        fetchConfig()
-        const interval = setInterval(fetchConfig, 30000) // Poll every 30s
-        return () => clearInterval(interval)
-    }, [])
+    })
 
 
     // Calculate averages (Logic reused)
@@ -386,6 +379,7 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
             })
 
             if (!res.ok) throw new Error("Failed to save")
+            await mutateConfig() // Force revalidation for all clients
             toast.success("Información del molde guardada correctamente")
         } catch (error) {
             console.error("Error saving materials config:", error)

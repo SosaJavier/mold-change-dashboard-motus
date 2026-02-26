@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import useSWR from "swr"
 import { toast } from "sonner"
 
 export interface ScheduledChange {
@@ -9,32 +9,14 @@ export interface ScheduledChange {
     linea: string
 }
 
+const fetcher = (url: string) => fetch(url).then(r => r.json())
+
 export function useScheduledChange() {
-    const [schedules, setSchedules] = useState<ScheduledChange[]>([])
-    const [isLoading, setIsLoading] = useState(true)
-
-    const fetchSchedules = async () => {
-        setIsLoading(true)
-        try {
-            const response = await fetch('/api/scheduled-changes')
-            if (!response.ok) throw new Error("Failed to fetch")
-            const data = await response.json()
-            setSchedules(data)
-        } catch (error) {
-            console.error("Failed to load schedules", error)
-            toast.error("Error al cargar cambios programados")
-        } finally {
-            setIsLoading(false)
-        }
-    }
-
-    useEffect(() => {
-        fetchSchedules()
-
-        // Optional: Poll for changes every 30 seconds to keep devices in sync
-        const interval = setInterval(fetchSchedules, 30000)
-        return () => clearInterval(interval)
-    }, [])
+    const { data: schedules = [], error, isLoading, mutate } = useSWR<ScheduledChange[]>(
+        '/api/scheduled-changes',
+        fetcher,
+        { refreshInterval: 5000 }
+    )
 
     const addSchedule = async (date: Date, moldId: string, description: string, linea: string) => {
         try {
@@ -47,7 +29,7 @@ export function useScheduledChange() {
             if (!response.ok) throw new Error("Failed to add")
 
             const newSchedule = await response.json()
-            setSchedules(prev => [...prev, newSchedule].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()))
+            await mutate() // Revalidate
             return newSchedule
         } catch (error) {
             console.error("Failed to add schedule", error)
@@ -63,7 +45,7 @@ export function useScheduledChange() {
 
             if (!response.ok) throw new Error("Failed to remove")
 
-            setSchedules(prev => prev.filter(s => s.id !== id))
+            await mutate() // Revalidate
             toast.success("Programacion eliminada")
         } catch (error) {
             console.error("Failed to remove schedule", error)
@@ -81,9 +63,7 @@ export function useScheduledChange() {
 
             if (!response.ok) throw new Error("Failed to update")
 
-            setSchedules(prev => prev.map(s =>
-                s.id === id ? { ...s, date: newDate.toISOString() } : s
-            ).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()))
+            await mutate() // Revalidate
             toast.success("Horario actualizado correctamente")
         } catch (error) {
             console.error("Failed to update schedule", error)
@@ -91,15 +71,15 @@ export function useScheduledChange() {
         }
     }
 
-    const nextChange = schedules.length > 0 ? schedules[0] : undefined
+    const nextChange = (schedules && schedules.length > 0) ? schedules[0] : undefined
 
     return {
-        schedules,
+        schedules: schedules || [],
         nextChange,
         isLoading,
         addSchedule,
         removeSchedule,
         updateSchedule,
-        refreshSchedules: fetchSchedules
+        refreshSchedules: mutate
     }
 }
