@@ -1,6 +1,0 @@
-﻿id: uniqueidentifier (null) NO
-fecha: datetime (null) NO
-molde_id: nvarchar (50) NO
-descripcion: nvarchar (-1) YES
-linea: nvarchar (50) NO
-created_at: datetime (null) YES

@@ -1,6 +1,0 @@
-﻿id: (newid())
-fecha: null
-molde_id: null
-descripcion: null
-linea: null
-created_at: (getdate())
