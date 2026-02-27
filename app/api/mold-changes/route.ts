@@ -35,6 +35,7 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json()
+    console.log("POST Mold Change - Received Body:", JSON.stringify(body, null, 2));
 
     // 🔥 Convertimos fechas correctamente
     const fechaInicio = body.fechaInicio

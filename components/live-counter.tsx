@@ -208,7 +208,13 @@ export function LiveCounter({
 
     const t = formatTime(seconds)
     const metaLabel = isOverTarget ? "FUERA DE META" : "EN META"
-    const retrasoPart = isOverTarget && retrasoMotivo ? ` | Motivo Retraso: ${retrasoMotivo}` : ""
+
+    // Si es "Otro", usamos la descripción custom. Sino, usamos el motivo seleccionado.
+    const effectiveRetrasoMotivo = isOverTarget && retrasoMotivo === "Otro"
+      ? retrasoDescripcion
+      : (isOverTarget ? retrasoMotivo : undefined);
+
+    const retrasoPart = isOverTarget && effectiveRetrasoMotivo ? ` | Motivo Retraso: ${effectiveRetrasoMotivo}` : ""
 
     const payload: any = {
       linea: selectedLine as Linea,
@@ -218,13 +224,13 @@ export function LiveCounter({
       turno,
       motivo,
       estado: "completado",
-      retrasoMotivo: isOverTarget
-        ? (retrasoMotivo === "Otro" ? retrasoDescripcion : retrasoMotivo)
-        : undefined,
+      retrasoMotivo: effectiveRetrasoMotivo,
       fechaFin: new Date().toISOString(),
       tiempoMuerto: tiempoMinutos,
       observaciones: `${metaLabel}${retrasoPart} | Tiempo: ${t.hrs}:${t.mins}:${t.secs} (Meta: 45 min)`,
     }
+
+    console.log("Saving change with payload:", JSON.stringify(payload, null, 2));
 
     try {
       if (activeChangeId) {

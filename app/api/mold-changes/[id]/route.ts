@@ -26,6 +26,7 @@ export async function PATCH(
   const { id } = await params
   try {
     const body = await request.json()
+    console.log(`PATCH Mold Change (ID: ${id}) - Received Body:`, JSON.stringify(body, null, 2));
 
     // Map camelCase to snake_case for the database
     const mapping: Record<string, string> = {
