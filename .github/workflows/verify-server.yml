@@ -10,34 +10,37 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Stop PM2 (prevent file lock)
+      # 1️⃣ Detener app si existe (evita bloqueo de archivos)
+      - name: Stop PM2 App
         run: pm2 stop Apps_Motus
         continue-on-error: true
 
+      # 2️⃣ Descargar código
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           clean: true
 
+      # 3️⃣ Configurar Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 4️⃣ Instalar pnpm
       - name: Install pnpm
         run: npm install -g pnpm
 
+      # 5️⃣ Instalar dependencias
       - name: Install dependencies
         run: pnpm install
 
+      # 6️⃣ Build producción
       - name: Build project
         run: pnpm run build
 
-      - name: Restart or Start PM2 app
+      # 7️⃣ Iniciar aplicación correctamente en Windows
+      - name: Start PM2 App
         run: |
-          pm2 describe Apps_Motus
-          if ($LASTEXITCODE -eq 0) {
-            pm2 restart Apps_Motus
-          } else {
-            pm2 start npm --name "Apps_Motus" -- start
-          }
+          pm2 delete Apps_Motus
+          pm2 start cmd --name "Apps_Motus" -- /c "pnpm start"
