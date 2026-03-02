@@ -230,12 +230,12 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
     // Calculate averages (Logic reused)
     const stats = useMemo(() => {
         const now = new Date()
-        const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
+        const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000)
         const oneMonthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000)
 
         const completedChanges = changes.filter(c => c.estado === "completado" && c.tiempoMuerto > 0)
 
-        const weeklyChanges = completedChanges.filter(c => new Date(c.fechaInicio) >= oneWeekAgo)
+        const monthlyStatsChanges = completedChanges.filter(c => new Date(c.fechaInicio) >= thirtyDaysAgo)
         const monthlyChanges = completedChanges.filter(c => new Date(c.fechaInicio) >= oneMonthAgo)
 
         const calculateAverage = (items: typeof changes) => {
@@ -245,7 +245,7 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
         }
 
         return {
-            weekly: calculateAverage(weeklyChanges),
+            weekly: calculateAverage(monthlyStatsChanges),
             monthly: calculateAverage(monthlyChanges)
         }
     }, [changes])

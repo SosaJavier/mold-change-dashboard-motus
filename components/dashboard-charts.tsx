@@ -29,9 +29,9 @@ const LINE_COLORS: Record<Linea, string> = {
   EDF2: "hsl(346, 77%, 50%)",
 }
 
-function getLast7Days() {
+function getLast30Days() {
   const days: string[] = []
-  for (let i = 6; i >= 0; i--) {
+  for (let i = 29; i >= 0; i--) {
     const d = new Date()
     d.setDate(d.getDate() - i)
     days.push(
@@ -44,16 +44,16 @@ function getLast7Days() {
 export function DashboardCharts() {
   const { changes } = useMoldChanges()
 
-  // Filter for last 7 days
+  // Filter for last 30 days
   const now = new Date()
-  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
+  const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000)
 
-  const weeklyChanges = changes.filter(c => new Date(c.fechaInicio) >= sevenDaysAgo)
+  const monthlyChanges = changes.filter(c => new Date(c.fechaInicio) >= thirtyDaysAgo)
 
-  // Changes per line (Weekly)
+  // Changes per line (Monthly)
   const perLine = LINEAS.map((linea) => ({
     linea,
-    cambios: weeklyChanges.filter((c) => c.linea === linea).length,
+    cambios: monthlyChanges.filter((c) => c.linea === linea).length,
     fill: LINE_COLORS[linea],
   }))
 
@@ -67,9 +67,9 @@ export function DashboardCharts() {
     { name: "Pendientes", value: pendientes, fill: "hsl(220, 14%, 70%)" },
   ].filter((d) => d.value > 0)
 
-  // Avg time per line (Weekly)
+  // Avg time per line (Monthly)
   const avgPerLine = LINEAS.map((linea) => {
-    const completed = weeklyChanges.filter(
+    const completed = monthlyChanges.filter(
       (c) =>
         c.linea === linea && c.estado === "completado" && c.tiempoMuerto > 0
     )
@@ -82,9 +82,9 @@ export function DashboardCharts() {
     return { linea, tiempo: avg, fill: LINE_COLORS[linea] }
   })
 
-  // Trend data (last 7 days)
-  const last7 = getLast7Days()
-  const trendData = last7.map((day) => {
+  // Trend data (last 30 days)
+  const last30 = getLast30Days()
+  const trendData = last30.map((day) => {
     const dayChanges = changes.filter((c) => {
       const d = new Date(c.fechaInicio)
       const label = d.toLocaleDateString("es-MX", {
@@ -106,7 +106,7 @@ export function DashboardCharts() {
       <Card className="bg-card border-border">
         <CardHeader className="pb-2">
           <CardTitle className="text-sm font-medium text-foreground">
-            Tendencia de Cambios (Ultimos 7 dias)
+            Tendencia de Cambios (Ultimos 30 dias)
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -194,7 +194,7 @@ export function DashboardCharts() {
         <Card className="bg-card border-border">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-foreground">
-              Cambios por Linea (Semanal)
+              Cambios por Linea (Mensual)
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -285,7 +285,7 @@ export function DashboardCharts() {
         <Card className="bg-card border-border">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium text-foreground">
-              Tiempo Promedio (min) (Semanal)
+              Tiempo Promedio (min) (Mensual)
             </CardTitle>
           </CardHeader>
           <CardContent>

@@ -9,17 +9,17 @@ export function StatsCards() {
 
   const now = new Date()
   const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate())
-  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
+  const thirtyDaysAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000)
 
   // 1. Cambios Hoy
   const todayChanges = changes.filter(c => new Date(c.fechaInicio) >= startOfToday)
   const todayCompleted = todayChanges.filter(c => c.estado === "completado").length
 
-  // 2. Completados Semana
-  const weeklyChanges = changes.filter(c => new Date(c.fechaInicio) >= sevenDaysAgo)
-  const weeklyCompletedCount = weeklyChanges.filter(c => c.estado === "completado").length
-  const weeklyEffectivity = weeklyChanges.length > 0
-    ? Math.round((weeklyCompletedCount / weeklyChanges.length) * 100)
+  // 2. Completados Mes
+  const monthlyChanges = changes.filter(c => new Date(c.fechaInicio) >= thirtyDaysAgo)
+  const monthlyCompletedCount = monthlyChanges.filter(c => c.estado === "completado").length
+  const monthlyEffectivity = monthlyChanges.length > 0
+    ? Math.round((monthlyCompletedCount / monthlyChanges.length) * 100)
     : 0
 
   // 3. En Proceso
@@ -28,10 +28,10 @@ export function StatsCards() {
     ? enProceso.map(c => c.moldeNuevo).join(", ")
     : "Ninguno"
 
-  // 4. Tiempo Promedio Semanal
-  const weeklyCompleted = weeklyChanges.filter(c => c.estado === "completado")
-  const avgTime = weeklyCompleted.length > 0
-    ? Math.round(weeklyCompleted.reduce((sum, c) => sum + (c.tiempoMuerto || 0), 0) / weeklyCompleted.length)
+  // 4. Tiempo Promedio Mensual
+  const monthlyCompleted = monthlyChanges.filter(c => c.estado === "completado")
+  const avgTime = monthlyCompleted.length > 0
+    ? Math.round(monthlyCompleted.reduce((sum, c) => sum + (c.tiempoMuerto || 0), 0) / monthlyCompleted.length)
     : 0
 
   const stats = [
@@ -43,10 +43,10 @@ export function StatsCards() {
       trend: "up" as const,
     },
     {
-      label: "Completados Semana",
-      value: weeklyCompletedCount,
+      label: "Completados Mes",
+      value: monthlyCompletedCount,
       icon: CheckCircle2,
-      change: `${weeklyEffectivity}% efectividad`,
+      change: `${monthlyEffectivity}% efectividad`,
       trend: "up" as const,
     },
     {
@@ -57,7 +57,7 @@ export function StatsCards() {
       trend: enProceso.length > 0 ? ("down" as const) : ("up" as const),
     },
     {
-      label: "Tiempo Prom. Semanal",
+      label: "Tiempo Prom. Mensual",
       value: `${avgTime} min`,
       icon: Clock,
       change: avgTime <= 45 ? "Dentro de meta" : "Fuera de meta",
