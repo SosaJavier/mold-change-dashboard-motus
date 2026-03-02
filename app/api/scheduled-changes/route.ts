@@ -15,7 +15,7 @@ export async function GET() {
                 created_at AS createdAt
             FROM programacion_cambios 
             WHERE fecha >= CAST(GETDATE() AS DATE) 
-            AND fecha < DATEADD(day, 8, CAST(GETDATE() AS DATE))
+            AND fecha < DATEADD(day, 31, CAST(GETDATE() AS DATE))
             ORDER BY fecha ASC
         `)
 

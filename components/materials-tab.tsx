@@ -259,13 +259,13 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
             .sort((a, b) => new Date(b.fechaInicio).getTime() - new Date(a.fechaInicio).getTime())
     }, [changes])
 
-    // Get Upcoming 7 Days
-    const upcoming7Days = useMemo(() => {
+    // Get Upcoming 30 Days
+    const upcomingMonth = useMemo(() => {
         const now = new Date()
-        const sevenDaysLater = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000)
+        const thirtyDaysLater = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000)
         return schedules.filter(s => {
             const d = new Date(s.date)
-            return d > now && d <= sevenDaysLater
+            return d > now && d <= thirtyDaysLater
         })
     }, [schedules])
 
@@ -673,17 +673,17 @@ export function MaterialsTab({ isFullscreen = false, onToggleFullscreen }: Mater
                     <CardHeader className="bg-secondary/20 pb-4 border-b">
                         <CardTitle className="flex items-center gap-2 text-xl">
                             <CalendarClock className="h-6 w-6 text-primary" />
-                            Agenda Semanal (Próximos 7 días)
+                            Agenda Mensual (Próximos 30 días)
                         </CardTitle>
                     </CardHeader>
                     <CardContent className="flex-1 overflow-auto p-4 space-y-3 custom-scrollbar">
-                        {upcoming7Days.length === 0 ? (
+                        {upcomingMonth.length === 0 ? (
                             <div className="h-full flex flex-col items-center justify-center text-muted-foreground opacity-50">
                                 <CalendarClock className="h-16 w-16 mb-4" />
-                                <p className="text-lg font-medium">No hay cambios programados para esta semana</p>
+                                <p className="text-lg font-medium">No hay cambios programados para este mes</p>
                             </div>
                         ) : (
-                            upcoming7Days.map(s => {
+                            upcomingMonth.map(s => {
                                 const isEditing = editingId === s.id
                                 return (
                                     <div key={s.id} className="flex items-center gap-5 p-5 bg-background rounded-xl border border-border/60 shadow-sm hover:shadow-md transition-all hover:border-primary/20">
