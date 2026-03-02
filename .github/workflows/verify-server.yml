@@ -10,37 +10,38 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      # 1️⃣ Detener app si existe (evita bloqueo de archivos)
+      # 1️⃣ Detener app si existe
       - name: Stop PM2 App
         run: pm2 stop Apps_Motus
         continue-on-error: true
 
-      # 2️⃣ Descargar código
+      # 2️⃣ Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           clean: true
 
-      # 3️⃣ Configurar Node
+      # 3️⃣ Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 4️⃣ Instalar pnpm
+      # 4️⃣ Install pnpm
       - name: Install pnpm
         run: npm install -g pnpm
 
-      # 5️⃣ Instalar dependencias
+      # 5️⃣ Install deps
       - name: Install dependencies
         run: pnpm install
 
-      # 6️⃣ Build producción
+      # 6️⃣ Build
       - name: Build project
         run: pnpm run build
 
-      # 7️⃣ Iniciar aplicación correctamente en Windows
+      # 7️⃣ Start PM2 (USANDO CMD)
       - name: Start PM2 App
+        shell: cmd
         run: |
           pm2 delete Apps_Motus
-          pm2 start cmd --name "Apps_Motus" -- /c "pnpm start"
+          pm2 start pnpm --name Apps_Motus -- start
