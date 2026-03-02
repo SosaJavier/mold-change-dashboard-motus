@@ -10,8 +10,14 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: Stop PM2 (prevent file lock)
+        run: |
+          pm2 stop all || echo "PM2 not running"
+
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          clean: true
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -28,4 +34,5 @@ jobs:
         run: pnpm run build
 
       - name: Restart PM2 app
-        run: pm2 restart Apps_Motus
+        run: |
+          pm2 start ecosystem.config.js || pm2 restart all
