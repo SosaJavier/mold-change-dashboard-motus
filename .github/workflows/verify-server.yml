@@ -11,8 +11,8 @@ jobs:
 
     steps:
       - name: Stop PM2 (prevent file lock)
-        run: |
-          pm2 stop all || echo "PM2 not running"
+        run: pm2 stop all
+        continue-on-error: true
 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -34,5 +34,4 @@ jobs:
         run: pnpm run build
 
       - name: Restart PM2 app
-        run: |
-          pm2 start ecosystem.config.js || pm2 restart all
+        run: pm2 restart all
