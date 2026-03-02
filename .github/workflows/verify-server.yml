@@ -10,7 +10,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      # 1️⃣ Detener app si existe
+      # 1️⃣ Stop app if exists
       - name: Stop PM2 App
         run: pm2 stop Apps_Motus
         continue-on-error: true
@@ -31,17 +31,21 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      # 5️⃣ Install deps
+      # 5️⃣ Install dependencies
       - name: Install dependencies
         run: pnpm install
 
-      # 6️⃣ Build
+      # 6️⃣ Build project
       - name: Build project
         run: pnpm run build
 
-      # 7️⃣ Start PM2 (USANDO CMD)
+      # 7️⃣ Delete old process (ignore if not exists)
+      - name: Delete old PM2 process
+        shell: cmd
+        run: pm2 delete Apps_Motus
+        continue-on-error: true
+
+      # 8️⃣ Start app correctly in Windows
       - name: Start PM2 App
         shell: cmd
-        run: |
-          pm2 delete Apps_Motus
-          pm2 start pnpm --name Apps_Motus -- start
+        run: pm2 start pnpm --name Apps_Motus -- start
