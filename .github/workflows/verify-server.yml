@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Stop PM2 (prevent file lock)
-        run: pm2 stop all
+        run: pm2 stop Apps_Motus
         continue-on-error: true
 
       - name: Checkout repository
@@ -33,5 +33,11 @@ jobs:
       - name: Build project
         run: pnpm run build
 
-      - name: Restart PM2 app
-        run: pm2 restart all
+      - name: Restart or Start PM2 app
+        run: |
+          pm2 describe Apps_Motus
+          if ($LASTEXITCODE -eq 0) {
+            pm2 restart Apps_Motus
+          } else {
+            pm2 start npm --name "Apps_Motus" -- start
+          }
